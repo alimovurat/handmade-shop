@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class PaintingsConfig(AppConfig):
+class ApiConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'paintings'
+    name = 'api'
