@@ -9,7 +9,6 @@ main {
 }
 
 .products-list {
-	border-top: 2px solid violet;
 	align-items: start;
 	padding-left: 0;
 	padding-right: 0;

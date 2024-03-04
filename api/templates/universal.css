@@ -302,6 +302,34 @@ menu {
 	padding-top: 35px;
 }
 
+/* Путь к текущей странице */
+
+.page-path {
+	display: block;
+	border-bottom: 2px solid violet;
+	font-size: 14px;
+	padding-bottom: 20px;
+}
+
+.page-path ul {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+}
+
+.page-path li {
+	padding-right: 25px;
+	list-style-type: '>';
+	padding-left: 10px;
+	cursor: pointer;
+}
+
+.page-path .home {
+	list-style-type: none;
+	padding-left: 0;
+}
+
 /* Футер */
 
 footer {
