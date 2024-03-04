@@ -1,4 +1,5 @@
 from django.http import HttpRequest, HttpResponse
+from django.shortcuts import render
 from datetime import datetime
 
 
@@ -11,6 +12,4 @@ def time_view(request: HttpRequest):
 
 
 def script_view(request: HttpRequest):
-    return HttpResponse('''
-        <script>alert("hello")</script>
-    ''')
+    return HttpResponse(render(request, 'homepage.html'))

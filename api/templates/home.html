@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Handmade Store</title>
+	<link rel="stylesheet" href="universal.css">
+	<link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+	<div class="home-page">
+		<header>
+			<div class="top-bar">
+				<div class="container">
+					<div class="top-bar-left">
+						<!-- pass -->
+					</div>
+					<div class="top-bar-right">
+						<ul class="top-bar-menu">
+							<li class="top-bar-menu-item home"><a class="top-bar-links" href="home.html">Главная</a>
+							</li>
+							<li class="top-bar-menu-item"><a class="top-bar-links" href="product.html">Корзина</a></li>
+							<li class="top-bar-menu-item"><a class="top-bar-links"
+									href="https://themes.g5plus.net/handmade/home-01/" target="_blank">Блог</a></li>
+							<li class="top-bar-menu-item"><a class="top-bar-links" href="authorization.html">Войти</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<header>
+			<div class="header-categories-search">
+				<div class="container">
+					<div class="logo">
+						<img src="images/logo.png" alt="logo">
+					</div>
+					<div class="search">
+						<div class="search-with-category">
+							<div class="form-search">
+								<form class="form-search-header" action="/search" , method="get">
+									<select name="categories">
+										<option value="categories">Категории</option>
+										<option value="paintings">Картины</option>
+										<option value="stuffed-toys">Мягкие игрушки</option>
+										<option value="brooches">Броши</option>
+									</select>
+									<input type="text" name="search" placeholder="Поиск">
+									<button class="search-button" type="submit">
+										<img src="images/search.png" alt="search" , width="30" , height="30">
+									</button>
+								</form>
+							</div>
+						</div>
+						<div class="shopping-cart">
+							<div class="cart">
+								<img src="images/shopping-cart.png" alt="cart" , width="30" , height="30">
+							</div>
+							<div class="total-price">
+								<p>0.00 ₽</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<nav>
+			<menu>
+				<div class="container navigation">
+					<ul class="main-menu">
+						<li class="menu-item catalogue">Каталог
+							<div class="hr-menu">
+								<hr class="hr-top">
+								<hr class="hr-bottom">
+							</div>
+							<div class="popup-menu">
+								<ul class="popup-menu-list">
+									<li class="catalogue-item"><a class="top-bar-links" href="paintings.html"><span
+												class="transformed">Картины</span></a></li>
+									<li class="catalogue-item"><a class="top-bar-links" href="stuffed_toys.html"><span
+												class="transformed">Мягкие игрушки</span></a>
+									</li>
+									<li class="catalogue-item"><a class="top-bar-links" href="brooches.html"><span
+												class="transformed">Броши</span></a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="menu-item">Обо мне</li>
+						<li class="menu-item">Портфолио</li>
+						<li class="menu-item">Оплата и доставка</li>
+						<li class="menu-item">Контакты</li>
+						<li class="menu-item">Новые посты</li>
+					</ul>
+				</div>
+			</menu>
+		</nav>
+		<section class="section-title">
+			<div class="container page-title">
+				<h1>Товары</h1>
+			</div>
+		</section>
+		<main>
+			<div class="container products-list">
+				<div class="main-left">
+					<aside class="aside-search">
+						<h4>Поиск продукта</h4>
+						<form class="form-search-main" action="/search" , method="get">
+							<input class="search-input" type="text" name="search" placeholder="Поиск">
+							<button class="search-button" type="submit">
+								<img src="images/search.png" alt="search" , width="30" , height="30">
+							</button>
+						</form>
+					</aside>
+					<aside class="aside-categories">
+						<h4>Категории</h4>
+						<ul class="aside-categories-list">
+							<li><span class="transformed">Акварель</span></li>
+							<li><span class="transformed">Акрил</span></li>
+							<li><span class="transformed">Батик</span></li>
+							<li><span class="transformed">Вышивка</span></li>
+							<li><span class="transformed">Гуашь</span></li>
+							<li><span class="transformed">Керамопласт</span></li>
+							<li><span class="transformed">Масло</span></li>
+							<li><span class="transformed">Мозаика</span></li>
+						</ul>
+					</aside>
+				</div>
+				<div class="main-right">
+					<section class="products">
+						<div class="row">
+							<div class="product-card">
+								<div class="product-top">
+									<img src="product groups/paintings/масло/6.jpg" alt="painting">
+								</div>
+								<div class="product-bottom">
+									<ul>
+										<li class="product-title">Журавли</li>
+										<div class="product-type-and-size">
+											<li class="product-type">Масло, на грунтованном холсте.</li>
+											<li class="product-size">Размер 80х55 см</li>
+										</div>
+										<li class="product-price"><span class="price-color">6000 ₽</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="product-card">
+								<div class="product-top">
+									<img src="product groups/paintings/масло/3.jpg" alt="painting">
+								</div>
+								<div class="product-bottom">
+									<ul>
+										<li class="product-title">Маяк</li>
+										<div class="product-type-and-size">
+											<li class="product-type">Масло, грунтованный холст на картоне.</li>
+											<li class="product-size">Размер 60x40 см</li>
+										</div>
+										<li class="product-price"><span class="price-color">6000 ₽</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="product-card">
+								<div class="product-top">
+									<img src="product groups/paintings/гуашь/3.jpg" alt="painting">
+								</div>
+								<div class="product-bottom">
+									<ul>
+										<li class="product-title">Парусник</li>
+										<div class="product-type-and-size">
+											<li class="product-type">Гуашь и акварель на ватмане. Оформлена в багет под
+												стеклом.</li>
+											<li class="product-size">Размер 34х25 см</li>
+										</div>
+										<li class="product-price"><span class="price-color">2000 ₽</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="product-card">
+								<div class="product-top">
+									<img src="product groups/paintings/акварель/2.jpg" alt="painting">
+								</div>
+								<div class="product-bottom">
+									<ul>
+										<li class="product-title">Ласточкино гнездо</li>
+										<div class="product-type-and-size">
+											<li class="product-type">Акварель на ватмане. Оформлена в багет под пленку.
+											</li>
+											<li class="product-size">Размер 64х44 см</li>
+										</div>
+										<li class="product-price"><span class="price-color">5000 ₽</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="product-card">
+								<div class="product-top">
+									<img src="product groups/paintings/батик/4.jpg" alt="painting">
+								</div>
+								<div class="product-bottom">
+									<ul>
+										<li class="product-title">Мельница</li>
+										<div class="product-type-and-size">
+											<li class="product-type">Батик, свободная роспись. Оформлена в багет под
+												стеклом.</li>
+											<li class="product-size">Размер 60х50 см</li>
+										</div>
+										<li class="product-price"><span class="price-color">3000 ₽</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="product-card">
+								<div class="product-top">
+									<img src="product groups/paintings/акварель/4.jpg" alt="painting">
+								</div>
+								<div class="product-bottom">
+									<ul>
+										<li class="product-title">Кот</li>
+										<div class="product-type-and-size">
+											<li class="product-type">Акварель на ватмане. Оформлена в багет под стеклом.
+											</li>
+											<li class="product-size">Размер 44х54 см</li>
+										</div>
+										<li class="product-price"><span class="price-color">3000 ₽</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="product-card">
+								<div class="product-top">
+									<img src="product groups/paintings/масло/5.jpg" alt="painting">
+								</div>
+								<div class="product-bottom">
+									<ul>
+										<li class="product-title">Кони на лугу</li>
+										<div class="product-type-and-size">
+											<li class="product-type">Масло на грунтованном холсте. Оформлена в багет.
+											</li>
+											<li class="product-size">Размер 65х45 см</li>
+										</div>
+										<li class="product-price"><span class="price-color">4000 ₽</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="product-card">
+								<div class="product-top">
+									<img src="product groups/paintings/акрил/1.jpg" alt="painting">
+								</div>
+								<div class="product-bottom">
+									<ul>
+										<li class="product-title">Сотворение</li>
+										<div class="product-type-and-size">
+											<li class="product-type">Акрил и акварель на ватмане. Оформлена в багет под
+												стеклом.</li>
+											<li class="product-size">Размер 39х49 см</li>
+										</div>
+										<li class="product-price"><span class="price-color">4000 ₽</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="product-card">
+								<div class="product-top">
+									<img src="product groups/paintings/масло/7.jpg" alt="painting">
+								</div>
+								<div class="product-bottom">
+									<ul>
+										<li class="product-title">Гуси-лебеди</li>
+										<div class="product-type-and-size">
+											<li class="product-type">Масло на грунтованном холсте на картоне. Оформлена
+												в багет.</li>
+											<li class="product-size">Размер 40х50 см</li>
+										</div>
+										<li class="product-price"><span class="price-color">5000 ₽</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</section>
+					<section class="products-page">
+						<ul class="pagination">
+							<li class="page-numbers current">1</li>
+							<li class="page-numbers">2</li>
+							<li class="next-page">
+								<img src="images/right.png" alt="next-page" , width="15" , height="15">
+							</li>
+						</ul>
+					</section>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div class="contacts">
+				<h3>Мои контакты</h3>
+				<div>
+					<p>+79600852218</p>
+					<p>Florencia19@mail.ru</p>
+				</div>
+				<div class="links">
+					<div class="vkontakte social-icon">
+						<img src="images/vkontakte-circle.png" alt="vkontakte" , width="40" , height="40">
+					</div>
+					<div class="odnoklassniki social-icon">
+						<img src="images/odnoklassniki-circle.png" alt="odnoklassniki" , width="40" , height="40">
+					</div>
+					<div class="telegram social-icon">
+						<img src="images/telegram-circle.png" alt="telegram" , width="40" , height="40">
+					</div>
+					<div class="whatsapp social-icon">
+						<img src="images/whatsapp-circle.png" alt="whatsapp" , width="40" , height="40">
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>

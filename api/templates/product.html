@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Product info</title>
+	<link rel="stylesheet" href="universal.css">
+	<link rel="stylesheet" href="product.css">
+</head>
+
+<body>
+	<div class="home-page">
+		<header>
+			<div class="top-bar">
+				<div class="container">
+					<div class="top-bar-left">
+						<!-- pass -->
+					</div>
+					<div class="top-bar-right">
+						<ul class="top-bar-menu">
+							<li class="top-bar-menu-item home"><a class="top-bar-links" href="home.html">Главная</a>
+							</li>
+							<li class="top-bar-menu-item"><a class="top-bar-links" href="product.html">Корзина</a></li>
+							<li class="top-bar-menu-item"><a class="top-bar-links"
+									href="https://themes.g5plus.net/handmade/home-01/" target="_blank">Блог</a></li>
+							<li class="top-bar-menu-item"><a class="top-bar-links" href="authorization.html">Войти</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<header>
+			<div class="header-categories-search">
+				<div class="container">
+					<div class="logo">
+						<img src="images/logo.png" alt="logo">
+					</div>
+					<div class="search">
+						<div class="search-with-category">
+							<div class="form-search">
+								<form class="form-search-header" action="/search" , method="get">
+									<select name="categories">
+										<option value="categories">Категории</option>
+										<option value="paintings">Картины</option>
+										<option value="stuffed-toys">Мягкие игрушки</option>
+										<option value="brooches">Броши</option>
+									</select>
+									<input type="text" name="search" placeholder="Поиск">
+									<button class="search-button" type="submit">
+										<img src="images/search.png" alt="search" , width="30" , height="30">
+									</button>
+								</form>
+							</div>
+						</div>
+						<div class="shopping-cart">
+							<div class="cart">
+								<img src="images/shopping-cart.png" alt="cart" , width="30" , height="30">
+							</div>
+							<div class="total-price">
+								<p>0.00 ₽</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<nav>
+			<menu>
+				<div class="container navigation">
+					<ul class="main-menu">
+						<li class="menu-item catalogue">Каталог
+							<div class="hr-menu">
+								<hr class="hr-top">
+								<hr class="hr-bottom">
+							</div>
+							<div class="popup-menu">
+								<ul class="popup-menu-list">
+									<li class="catalogue-item"><a class="top-bar-links" href="paintings.html"><span
+												class="transformed">Картины</span></a></li>
+									<li class="catalogue-item"><a class="top-bar-links" href="stuffed_toys.html"><span
+												class="transformed">Мягкие игрушки</span></a>
+									</li>
+									<li class="catalogue-item"><a class="top-bar-links" href="brooches.html"><span
+												class="transformed">Броши</span></a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="menu-item">Обо мне</li>
+						<li class="menu-item">Портфолио</li>
+						<li class="menu-item">Оплата и доставка</li>
+						<li class="menu-item">Контакты</li>
+						<li class="menu-item">Новые посты</li>
+					</ul>
+				</div>
+			</menu>
+		</nav>
+		<section class="section-title">
+			<div class="container page-title">
+				<h1>Журавли</h1>
+			</div>
+		</section>
+		<hr class="section-title-hr">
+		<main class="single-product">
+			<div class="container product">
+				<div class="left-side">
+					<img src="product groups/paintings/Масло/6.jpg" alt="painting">
+				</div>
+				<div class="right-side">
+					<ul class="paintings-info">
+						<li class="paintings title">Журавли</li>
+						<li class="paintings price">6000 ₽</li>
+						<div class="concave">
+							<li class="paintings genre"><b>Жанр:</b> Пейзаж</li>
+							<li class="paintings technique"><b>Техника:</b> Масло</li>
+							<li class="paintings size"><b>Размер:</b> 80х55 см</li>
+							<li class="paintings material"><b>Материал:</b> Холст</li>
+							<li class="paintings frame"><b>Наличие рамы:</b> Есть</li>
+							<li class="paintings passe-partout"><b>Наличие паспарту:</b> Нет</li>
+							<li class="paintings creation-year"><b>Год написания:</b> 2013</li>
+							<div class="wrap">
+								<button class="add-to-cart-button" type="submit" name="add-to-cart">Купить</button>
+							</div>
+						</div>
+					</ul>
+				</div>
+			</div>
+		</main>
+		<footer>
+			<div class="contacts">
+				<h3>Мои контакты</h3>
+				<div>
+					<p>+79600852218</p>
+					<p>Florencia19@mail.ru</p>
+				</div>
+				<div class="links">
+					<div class="vkontakte social-icon">
+						<img src="images/vkontakte-circle.png" alt="vkontakte" , width="40" , height="40">
+					</div>
+					<div class="odnoklassniki social-icon">
+						<img src="images/odnoklassniki-circle.png" alt="odnoklassniki" , width="40" , height="40">
+					</div>
+					<div class="telegram social-icon">
+						<img src="images/telegram-circle.png" alt="telegram" , width="40" , height="40">
+					</div>
+					<div class="whatsapp social-icon">
+						<img src="images/whatsapp-circle.png" alt="whatsapp" , width="40" , height="40">
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+</body>
+
+</html>
