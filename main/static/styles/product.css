@@ -1,3 +1,53 @@
+/* Раздел с титульниками */
+
+.section-title {
+	height: 300px;
+	display: flex;
+	align-items: center;
+}
+
+.page-title {
+	position: relative;
+	height: 260px;
+	background-image: url("../images/background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: "frankinity";
+}
+
+.page-title h1 {
+	margin: 0;
+	font-size: 80px;
+	padding-top: 35px;
+}
+
+/* Путь к текущей странице */
+
+.page-path {
+	display: block;
+	border-bottom: 2px solid violet;
+	font-size: 14px;
+	padding-bottom: 20px;
+}
+
+.page-path ul {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+}
+
+.page-path li {
+	padding-right: 25px;
+	list-style-type: '>';
+	padding-left: 10px;
+}
+
+.page-path .home {
+	list-style-type: none;
+	padding-left: 0;
+}
+
 /* main */
 
 .section-title-hr {
@@ -25,7 +75,7 @@
 	padding: 0 40px;
 	border-left: 2px solid white;
 	border-top: 2px solid white;
-	border-radius: 20px;
+	border-radius: 10px;
 	box-shadow: 5px 3px 5px #999999;
 }
 
@@ -62,7 +112,7 @@
 	padding: 10px 0 10px 0;
 	border-left: 2px solid white;
 	border-top: 2px solid white;
-	border-radius: 20px;
+	border-radius: 10px;
 	box-shadow: 5px 3px 5px #999999;
 	text-align: center;
 }
@@ -77,7 +127,7 @@
 .concave {
 	border-right: 2px solid white;
 	border-bottom: 2px solid white;
-	border-radius: 20px;
+	border-radius: 10px;
 	box-shadow: inset 5px 3px 5px #999999;
 }
 
