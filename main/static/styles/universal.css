@@ -1,11 +1,11 @@
 @font-face {
 	font-family: "frankinity";
-	src: url("fonts/frankinity/FRANKINITY.otf") format("opentype");
+	src: url("../fonts/frankinity/FRANKINITY.otf") format("opentype");
 }
 
 @font-face {
 	font-family: "roboto";
-	src: url("fonts/roboto/Roboto-Regular.ttf") format("truetype");
+	src: url("../fonts/roboto/Roboto-Regular.ttf") format("truetype");
 }
 
 body {
@@ -278,56 +278,6 @@ menu {
 	color: violet;
 	cursor: pointer;
 	padding-left: 20px;
-}
-
-/* Раздел с титульниками */
-
-.section-title {
-	height: 300px;
-	display: flex;
-	align-items: center;
-}
-
-.page-title {
-	height: 260px;
-	background-image: url("images/background.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	font-family: "frankinity";
-}
-
-.page-title h1 {
-	margin: 0;
-	font-size: 80px;
-	padding-top: 35px;
-}
-
-/* Путь к текущей странице */
-
-.page-path {
-	display: block;
-	border-bottom: 2px solid violet;
-	font-size: 14px;
-	padding-bottom: 20px;
-}
-
-.page-path ul {
-	padding: 0;
-	margin: 0;
-	display: flex;
-	align-items: center;
-}
-
-.page-path li {
-	padding-right: 25px;
-	list-style-type: '>';
-	padding-left: 10px;
-	cursor: pointer;
-}
-
-.page-path .home {
-	list-style-type: none;
-	padding-left: 0;
 }
 
 /* Футер */

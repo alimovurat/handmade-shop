@@ -1,0 +1,192 @@
+/* Раздел с титульниками */
+
+.section-title {
+	height: 300px;
+	display: flex;
+	align-items: center;
+}
+
+.page-title {
+	position: relative;
+	height: 260px;
+	background-image: url("../images/background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: "frankinity";
+}
+
+.page-title h1 {
+	margin: 0;
+	font-size: 80px;
+	padding-top: 35px;
+}
+
+/* Путь к текущей странице */
+
+.page-path {
+	display: block;
+	border-bottom: 2px solid violet;
+	font-size: 14px;
+	padding-bottom: 20px;
+}
+
+.page-path ul {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+}
+
+.page-path li {
+	padding-right: 25px;
+	list-style-type: '>';
+	padding-left: 10px;
+}
+
+.page-path .home {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+/* main */
+
+.products-in-cart {
+	display: block;
+	border: 1px solid #e0e0e0;
+	border-radius: 10px;
+	margin-top: 20px;
+	padding: 20px;
+}
+
+.top {
+	width: 100%;
+	border-bottom: 1px solid #e0e0e0;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+	display: flex;
+	align-items: center;
+
+}
+
+.top img {
+	padding-right: 10px;
+}
+
+.top h3 {
+	margin: 0;
+	font-size: larger;
+}
+
+.center {
+	display: flex;
+	align-items: center;
+	height: 160px;
+	border-bottom: 1px solid #e0e0e0;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+
+.center-left {
+	width: 20%;
+	height: 150px;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.center-left img {
+	max-width: 100%;
+	max-height: 100%;
+	border-radius: 10px;
+	box-shadow: 5px 3px 5px #999999;
+}
+
+.center-right {
+	width: 80%;
+	padding: 0 20px;
+}
+
+.product-info ul {
+	list-style-type: none;
+	display: flex;
+	padding: 10px 0;
+}
+
+.product-info li {
+	padding-right: 10px;
+}
+
+.product-title {
+	font-size: larger;
+	color: rgb(126, 1, 215)
+}
+
+.product-price {
+	display: flex;
+	align-items: center;
+}
+
+.price {
+	width: 50%;
+	color: red;
+}
+
+.remove-button {
+	text-align: right;
+	width: 50%;
+	cursor: pointer;
+}
+
+.bottom {
+	display: flex;
+	align-items: center;
+}
+
+.back-button {
+	width: 50%;
+}
+
+.back-button button {
+	padding: 10px;
+	margin-left: 40px;
+	background-color: indigo;
+	color: white;
+	border-radius: 5px;
+}
+
+.back-button button:hover {
+	cursor: pointer;
+	background-color: violet;
+	color: black;
+}
+
+.in-cart {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: right;
+	text-align: center;
+	font-size: inherit;
+	line-height: 8px;
+}
+
+.total,
+.delivery {
+	padding-right: 15px;
+	border-right: 1px solid #e0e0e0;
+	;
+}
+
+.delivery,
+.to-pay {
+	padding-left: 15px;
+}
+
+.to-pay b {
+	color: red;
+}
+
+.grey {
+	color: rgb(159, 159, 159);
+}
