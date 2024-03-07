@@ -7,9 +7,8 @@
 }
 
 .page-title {
-	position: relative;
 	height: 260px;
-	background-image: url("../images/background.jpg");
+	background-image: url("../images/background-stuffed-toys-2.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	font-family: "frankinity";
@@ -19,6 +18,8 @@
 	margin: 0;
 	font-size: 80px;
 	padding-top: 35px;
+	color: black;
+	/* color: rgb(229, 73, 148); */
 }
 
 /* Путь к текущей странице */
@@ -94,8 +95,6 @@ main {
 
 .main-right {
 	width: 75%;
-	height: 1350px;
-	position: relative;
 }
 
 .row {
@@ -104,16 +103,15 @@ main {
 
 .product-card {
 	width: 260px;
-	height: 389px;
+	height: 320px;
 	margin: 20px;
 	text-align: center;
 	display: flex;
 	flex-direction: column;
-	background-color: #dfdfdf;
 	border-radius: 10px;
-	box-shadow: 5px 3px 5px #999999;
+	box-shadow: 0px 0px 5px #999999;
 	transition: all 0.3s ease;
-	cursor: pointer;
+	background-color: #f5f5f5;
 }
 
 .product-card:hover {
@@ -137,46 +135,35 @@ main {
 	padding-top: 10px;
 }
 
-.product-type-and-size {
-	height: 65.23px;
-	padding: 5px;
-}
-
-.product-type,
-.product-size {
-	list-style-type: none;
-	padding: 2px 2px;
-	margin: 0;
-	font-size: smaller;
-}
-
 .product-price {
 	list-style-type: none;
-	color: violet;
+	color: indigo;
 	font-size: medium;
-	padding-top: 10px;
+	padding-top: 20px;
 }
 
 .product-bottom {
-	height: 40%;
+	height: 30%;
 	background-color: white;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
-	border: 1px solid #e0e0e0;
 }
 
 .product-top {
-	height: 60%;
-	border-bottom: 2px solid #dedede;
+	height: 70%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 }
 
 .product-top img {
-	max-width: 100%;
-	max-height: 100%;
+	max-width: 90%;
+	max-height: 90%;
+	cursor: pointer;
 }
+
 
 .products-page {
 	width: 100%;
@@ -205,10 +192,10 @@ main {
 }
 
 .current {
-	background-color: violet;
+	background-color: indigo;
 	color: white;
 	cursor: default;
-	border-color: violet;
+	border-color: indigo;
 }
 
 .next-page {

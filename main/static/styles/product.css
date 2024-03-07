@@ -7,7 +7,6 @@
 }
 
 .page-title {
-	position: relative;
 	height: 260px;
 	background-image: url("../images/background.jpg");
 	background-repeat: no-repeat;
@@ -50,6 +49,53 @@
 
 /* main */
 
+main {
+	padding-bottom: 40px;
+}
+
+.main-left {
+	width: 300px;
+}
+
+.products-list {
+	align-items: start;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.form-search-main {
+	font-size: large;
+	display: flex;
+	vertical-align: middle;
+	height: 54px;
+	position: relative;
+}
+
+.search-input[type="text"] {
+	width: 100%;
+	height: 50px;
+}
+
+.search-button {
+	position: absolute;
+	right: 0px;
+}
+
+.aside-categories-list {
+	padding-left: 10px;
+}
+
+.aside-categories-list li {
+	list-style-type: none;
+	padding: 10px 0 10px 0;
+	border-bottom: 2px solid #e0e0e0;
+}
+
+.main-right {
+	width: 75%;
+	position: relative;
+}
+
 .section-title-hr {
 	width: 1200px;
 	margin-top: 0;
@@ -57,41 +103,43 @@
 }
 
 .product {
-	border: 2px solid #e0e0e0;
-	padding: 50px 40px;
-	margin-bottom: 25px;
-	margin-top: 25px;
-	background-color: #dfdfdf;
-	border-radius: 10px;
-	box-shadow: 5px 3px 5px #999999;
+	height: 450px;
+	margin: 25px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 .left-side {
 	width: 60%;
-	height: 500px;
+	height: 100%;
+	background-color: #f5f5f5;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 0 40px;
-	border-left: 2px solid white;
-	border-top: 2px solid white;
-	border-radius: 10px;
-	box-shadow: 5px 3px 5px #999999;
 }
 
 .left-side img {
-	max-width: 100%;
-	max-height: 100%;
+	max-width: 90%;
+	max-height: 90%;
 	border-radius: 10px;
 	box-shadow: 5px 3px 5px #999999;
-	border-top: 2px solid white;
-	border-left: 2px solid white;
+}
+
+.product .right-side {
+	text-align: left;
+	justify-content: left;
 }
 
 .right-side {
+	position: relative;
 	width: 40%;
-	margin-left: 50px;
+	height: 450px;
 	z-index: 2;
+	text-align: left;
+	background-color: white;
+	margin-left: 30px;
 }
 
 .paintings-info li {
@@ -104,31 +152,17 @@
 
 .paintings {
 	font-size: large;
-	padding-left: 40px;
 }
 
 .title {
 	font-size: 50px;
-	padding: 10px 0 10px 0;
-	border-left: 2px solid white;
-	border-top: 2px solid white;
-	border-radius: 10px;
-	box-shadow: 5px 3px 5px #999999;
-	text-align: center;
+	padding: 0 0 10px 0;
 }
 
 .price {
 	font-size: 30px;
-	color: violet;
-	padding: 20px 0 20px 0;
-	text-align: center;
-}
-
-.concave {
-	border-right: 2px solid white;
-	border-bottom: 2px solid white;
-	border-radius: 10px;
-	box-shadow: inset 5px 3px 5px #999999;
+	color: indigo;
+	padding: 20px 0;
 }
 
 .genre {
@@ -140,34 +174,31 @@
 .wrap {
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	padding-top: 60px;
-	padding-bottom: 60px;
+	justify-content: left;
+	position: absolute;
+	bottom: 0;
 }
 
 .add-to-cart-button {
-	font-size: 22px;
+	font-size: 15px;
 	font-weight: 700;
-	color: white;
-	background: #ae4fd1;
-	background: linear-gradient(90deg, rgb(230, 129, 222) 0%, rgb(203, 79, 209) 100%);
-	border: none;
+	font-family: "roboto";
+	border: 2px solid violet;
 	border-radius: 1000px;
-	box-shadow: 12px 12px 24px rgba(187, 79, 209, 0.64);
 	transition: all 0.3s ease-in-out 0s;
 	cursor: pointer;
 	outline: none;
 	position: relative;
-	padding: 15px 38px;
+	padding: 7px 19px;
+	background-color: white;
 }
 
 .add-to-cart-button::before {
 	content: '';
 	border-radius: 1000px;
-	min-width: calc(156px + 12px);
-	min-height: calc(60px + 12px);
-	border: 6px solid #f700ff;
-	box-shadow: 0 0 60px rgba(204, 0, 255, 0.64);
+	min-width: calc(82px + 12px);
+	min-height: calc(20px + 12px);
+	box-shadow: 0 0 30px violet;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -178,8 +209,9 @@
 
 .add-to-cart-button:hover,
 .add-to-cart-button:focus {
-	color: #313133;
 	transform: translateY(-6px);
+	color: indigo;
+	border-color: white;
 }
 
 .add-to-cart-button:hover::before,
@@ -191,8 +223,8 @@
 	content: '';
 	width: 30px;
 	height: 30px;
-	border-radius: 100%;
-	border: 6px solid #f700ff;
+	border-radius: 1000px;
+	border: 2px solid #f700ff;
 	position: absolute;
 	z-index: -1;
 	top: 50%;
@@ -215,8 +247,8 @@
 	}
 
 	100% {
-		width: 170px;
-		height: 170px;
+		width: 120px;
+		height: 50px;
 		opacity: 0;
 	}
 }

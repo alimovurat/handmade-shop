@@ -1,1 +1,1 @@
-A shop selling handmade goods such as paintings, stuffed animals and brooches.
+A shop selling handmade goods such as paintings, stuffed toys and brooches.
