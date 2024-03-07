@@ -7,7 +7,6 @@
 }
 
 .page-title {
-	position: relative;
 	height: 260px;
 	background-image: url("../images/background.jpg");
 	background-repeat: no-repeat;
@@ -65,7 +64,6 @@
 	margin-bottom: 20px;
 	display: flex;
 	align-items: center;
-
 }
 
 .top img {
@@ -77,6 +75,11 @@
 	font-size: larger;
 }
 
+.empty-cart-button {
+	margin-left: auto;
+	margin-right: 0;
+}
+
 .center {
 	display: flex;
 	align-items: center;
@@ -84,6 +87,7 @@
 	border-bottom: 1px solid #e0e0e0;
 	padding-bottom: 20px;
 	margin-bottom: 20px;
+	position: relative;
 }
 
 .center-left {
@@ -107,10 +111,15 @@
 	padding: 0 20px;
 }
 
+.product-info {
+	margin-bottom: 10px;
+}
+
 .product-info ul {
 	list-style-type: none;
 	display: flex;
-	padding: 10px 0;
+	margin: 0;
+	padding: 0;
 }
 
 .product-info li {
@@ -119,6 +128,7 @@
 
 .product-title {
 	font-size: larger;
+	margin-bottom: 10px;
 	color: rgb(126, 1, 215)
 }
 
@@ -132,33 +142,16 @@
 	color: red;
 }
 
-.remove-button {
-	text-align: right;
-	width: 50%;
+.remove-product-button {
+	position: absolute;
+	top: 0;
+	right: 0;
 	cursor: pointer;
 }
 
 .bottom {
 	display: flex;
 	align-items: center;
-}
-
-.back-button {
-	width: 50%;
-}
-
-.back-button button {
-	padding: 10px;
-	margin-left: 40px;
-	background-color: indigo;
-	color: white;
-	border-radius: 5px;
-}
-
-.back-button button:hover {
-	cursor: pointer;
-	background-color: violet;
-	color: black;
 }
 
 .in-cart {
@@ -169,6 +162,8 @@
 	text-align: center;
 	font-size: inherit;
 	line-height: 8px;
+	margin-left: auto;
+	margin-right: 0;
 }
 
 .total,
@@ -189,4 +184,74 @@
 
 .grey {
 	color: rgb(159, 159, 159);
+}
+
+/* Gradient button */
+
+button[type=submit] {
+	width: 180px;
+	height: 50px;
+	border: none;
+	outline: none;
+	color: indigo;
+	border: 1px solid #e0e0e0;
+	cursor: pointer;
+	position: relative;
+	z-index: 0;
+	border-radius: 10px;
+}
+
+button[type=submit]:before {
+	content: '';
+	background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	background-size: 400%;
+	z-index: -1;
+	filter: blur(5px);
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	animation: glowing 20s linear infinite;
+	opacity: 0;
+	transition: opacity .3s ease-in-out;
+	border-radius: 10px;
+}
+
+button[type=submit]:active {
+	color: #000
+}
+
+button[type=submit]:active:after {
+	background: transparent;
+}
+
+button[type=submit]:hover:before {
+	opacity: 1;
+}
+
+button[type=submit]:after {
+	z-index: -1;
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: white;
+	left: 0;
+	top: 0;
+	border-radius: 10px;
+}
+
+@keyframes glowing {
+	0% {
+		background-position: 0 0;
+	}
+
+	50% {
+		background-position: 400% 0;
+	}
+
+	100% {
+		background-position: 0 0;
+	}
 }

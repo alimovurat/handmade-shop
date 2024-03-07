@@ -13,7 +13,7 @@
 </section>
 <section class="page-path container">
 	<ul>
-		<li class="home"><a href="{% url 'home' %}">Главная</a></li>
+		<li class="home"><a href="{% url 'paintings' %}">Главная</a></li>
 		<li>Корзина</li>
 	</ul>
 </section>
@@ -24,6 +24,9 @@
 		</div>
 		<div>
 			<h3>Товаров в корзине (2)</h3>
+		</div>
+		<div class='empty-cart-button'>
+			<button type='submit' name='back'>ОЧИСТИТЬ КОРЗИНУ</button>
 		</div>
 	</div>
 	<div class='center'>
@@ -37,17 +40,19 @@
 					<li><b>Категория:</b> Картина,</li>
 					<li><b>Размер:</b> 80х55 см,</li>
 					<li><b>Материал:</b> Холст,</li>
-					<li><b>Наличие рамы:</b> Есть,</li>
+					<li><b>Наличие подрамника:</b> Есть,</li>
+					<li><b>Наличие багета:</b> Нет,</li>
+				</ul>
+				<ul>
+					<li><b>Оформление:</b> Нет,</li>
 					<li><b>Наличие паспарту:</b> Нет</li>
 				</ul>
 			</div>
 			<div class='product-price'>
 				<div class='price'><b>Цена:</b> 6000 ₽</div>
-				<div class='remove-button'>
-					<img src="{% static '/images/remove.png' %}" alt="remove" widht=30px height=30px>
-				</div>
 			</div>
 		</div>
+		<img class='remove-product-button' src="{% static '/images/remove-3.png' %}" alt="remove" width=30px height=30px>
 	</div>
 	<div class='center'>
 		<div class='center-left'>
@@ -60,21 +65,23 @@
 					<li><b>Категория:</b> Картина,</li>
 					<li><b>Размер:</b> 44х54 см,</li>
 					<li><b>Материал:</b> Холст,</li>
-					<li><b>Наличие рамы:</b> Нет,</li>
+					<li><b>Наличие подрамника:</b> Нет,</li>
+					<li><b>Наличие багета:</b> Есть,</li>
+				</ul>
+				<ul>
+					<li><b>Оформление:</b> Плёнка,</li>
 					<li><b>Наличие паспарту:</b> Нет</li>
 				</ul>
 			</div>
 			<div class='product-price'>
 				<div class='price'><b>Цена:</b> 3000 ₽</div>
-				<div class='remove-button'>
-					<img src="{% static '/images/remove.png' %}" alt="remove" widht=30px height=30px>
-				</div>
 			</div>
 		</div>
+		<img class='remove-product-button' src="{% static '/images/remove-3.png' %}" alt="remove" width=30px height=30px>
 	</div>
 	<div class='bottom'>
 		<div class='back-button'>
-			<a href="{% url 'home' %}"><button type='submit' name='back'>НАЗАД К ПОКУПКАМ</button></a>
+			<a href="{% url 'paintings' %}"><button type='submit' name='back'>НАЗАД К ПОКУПКАМ</button></a>
 		</div>
 		<div class='total-price in-cart'>
 			<div class='total'>

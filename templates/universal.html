@@ -21,7 +21,7 @@
 					</div>
 					<div class="top-bar-right">
 						<ul class="top-bar-menu">
-							<li class="top-bar-menu-item home"><a class="top-bar-links" href="{% url 'home' %}">Главная</a>
+							<li class="top-bar-menu-item home"><a class="top-bar-links" href="{% url 'paintings' %}">Главная</a>
 							</li>
 							<li class="top-bar-menu-item"><a class="top-bar-links" href="{% url 'shopping_cart' %}">Корзина</a></li>
 							<li class="top-bar-menu-item"><a class="top-bar-links"
@@ -48,7 +48,7 @@
 										<option value="brooches">Броши</option>
 									</select>
 									<input type="text" name="search" placeholder="Поиск">
-									<button class="search-button" type="submit">
+									<button class="search-button" type="search">
 										<img src="{% static 'images/search.png' %}" alt="search" , width="30" , height="30">
 									</button>
 								</form>
@@ -76,12 +76,12 @@
 								</div>
 								<div class="popup-menu">
 									<ul class="popup-menu-list">
-										<li class="catalogue-item"><a class="top-bar-links" href="paintings.html"><span
+										<li class="catalogue-item"><a class="top-bar-links" href="{% url 'paintings' %}"><span
 													class="transformed">Картины</span></a></li>
-										<li class="catalogue-item"><a class="top-bar-links" href="stuffed_toys.html"><span
+										<li class="catalogue-item"><a class="top-bar-links" href="{% url 'stuffed_toys' %}"><span
 													class="transformed">Мягкие игрушки</span></a>
 										</li>
-										<li class="catalogue-item"><a class="top-bar-links" href="brooches.html"><span
+										<li class="catalogue-item"><a class="top-bar-links" href="{% url 'brooches' %}"><span
 													class="transformed">Броши</span></a></li>
 									</ul>
 								</div>

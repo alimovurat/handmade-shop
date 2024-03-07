@@ -1,0 +1,160 @@
+{% extends 'universal.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'styles/stuffed_toys.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="section-title">
+	<div class="container page-title">
+		<h1>Мягкие игрушки</h1>
+	</div>
+</section>
+<section class="page-path container">
+	<ul>
+		<li class="home">Главная</li>
+		<li>Мягкие игрушки</li>
+	</ul>
+</section>
+<div class="container products-list">
+	<div class="main-left">
+		<aside class="aside-search">
+			<h4>Поиск продукта</h4>
+			<form class="form-search-main" action="/search" method="get">
+				<input class="search-input" type="text" name="search" placeholder="Поиск">
+				<button class="search-button" type="search">
+					<img src="{% static 'images/search.png' %}" alt="search" width="30" height="30">
+				</button>
+			</form>
+		</aside>
+	</div>
+	<div class="main-right">
+		<section class="products">
+			<div class="row">
+				<a href="{% url 'product' %}"><div class="product-card">
+					<div class="product-top">
+						<img src="{% static 'categories/stuffed-toys/2.png' %}" alt="painting">
+					</div>
+					<div class="product-bottom">
+						<ul>
+							<li class="product-title">Зайчик</li>
+							<li class="product-price"><span class="price-color">2500 ₽</span>
+							</li>
+						</ul>
+					</div>
+				</div></a>
+				<div class="product-card">
+					<div class="product-top">
+						<img src="{% static 'categories/stuffed-toys/3.png' %}" alt="painting">
+					</div>
+					<div class="product-bottom">
+						<ul>
+							<li class="product-title">Медвежонок</li>
+							<li class="product-price"><span class="price-color">2500 ₽</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-top">
+						<img src="{% static 'categories/stuffed-toys/4.png' %}" alt="painting">
+					</div>
+					<div class="product-bottom">
+						<ul>
+							<li class="product-title">Поросенок-морячок</li>
+							<li class="product-price"><span class="price-color">2500 ₽</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="product-card">
+					<div class="product-top">
+						<img src="{% static 'categories/stuffed-toys/11.png' %}" alt="painting">
+					</div>
+					<div class="product-bottom">
+						<ul>
+							<li class="product-title">Декоративная елка</li>
+							<li class="product-price"><span class="price-color">3000 ₽</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-top">
+						<img src="{% static 'categories/stuffed-toys/6.png' %}" alt="painting">
+					</div>
+					<div class="product-bottom">
+						<ul>
+							<li class="product-title">Лев</li>
+							<li class="product-price"><span class="price-color">2500 ₽</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-top">
+						<img src="{% static 'categories/stuffed-toys/7.png' %}" alt="painting">
+					</div>
+					<div class="product-bottom">
+						<ul>
+							<li class="product-title">Дед мороз на санях</li>
+							<li class="product-price"><span class="price-color">3000 ₽</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="product-card">
+					<div class="product-top">
+						<img src="{% static 'categories/stuffed-toys/8.png' %}" alt="painting">
+					</div>
+					<div class="product-bottom">
+						<ul>
+							<li class="product-title">Барашек</li>
+							<li class="product-price"><span class="price-color">3000 ₽</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-top">
+						<img src="{% static 'categories/stuffed-toys/9.png' %}" alt="painting">
+					</div>
+					<div class="product-bottom">
+						<ul>
+							<li class="product-title">Жираф</li>
+							<li class="product-price"><span class="price-color">2500 ₽</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="product-card">
+					<div class="product-top">
+						<img src="{% static 'categories/stuffed-toys/10.png' %}" alt="painting">
+					</div>
+					<div class="product-bottom">
+						<ul>
+							<li class="product-title">Снеговик на повозке</li>
+							<li class="product-price"><span class="price-color">3000 ₽</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="products-page">
+			<ul class="pagination">
+				<li class="page-numbers current">1</li>
+				<li class="page-numbers">2</li>
+				<li class="next-page">
+					<img src="{% static 'images/right.png' %}" alt="next-page" width="15" height="15">
+				</li>
+			</ul>
+		</section>
+	</div>
+</div>
+{% endblock %}

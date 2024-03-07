@@ -14,32 +14,59 @@
 <section class="page-path container">
 	<ul>
 		<li class="home">Главная</li>
-		<li><a href="{% url 'home' %}">Товары</a></li>
+		<li><a href="{% url 'paintings' %}">Товары</a></li>
 		<li>Картины</li>
 	</ul>
 </section>
-<div class="container product">
-	<div class="left-side">
-		<img src="{% static 'categories/paintings/Масло/6.jpg' %}" alt="painting">
+<div class="container products-list">
+	<div class="main-left">
+		<aside class="aside-search">
+			<h4>Поиск продукта</h4>
+			<form class="form-search-main" action="/search" method="get">
+				<input class="search-input" type="text" name="search" placeholder="Поиск">
+				<button class="search-button" type="submit">
+					<img src="{% static 'images/search.png' %}" alt="search" width="30" height="30">
+				</button>
+			</form>
+		</aside>
+		<aside class="aside-categories">
+			<h4>Категории</h4>
+			<ul class="aside-categories-list">
+				<li><span class="transformed">Акварель</span></li>
+				<li><span class="transformed">Акрил</span></li>
+				<li><span class="transformed">Батик</span></li>
+				<li><span class="transformed">Вышивка</span></li>
+				<li><span class="transformed">Гуашь</span></li>
+				<li><span class="transformed">Керамопласт</span></li>
+				<li><span class="transformed">Масло</span></li>
+				<li><span class="transformed">Мозаика</span></li>
+			</ul>
+		</aside>
 	</div>
-	<div class="right-side">
-		<ul class="paintings-info">
-			<li class="paintings title">Журавли</li>
-			<li class="paintings price">6000 ₽</li>
-			<div class="concave">
-				<li class="paintings genre"><b>Жанр:</b> Пейзаж</li>
-				<li class="paintings technique"><b>Техника:</b> Масло</li>
-				<li class="paintings size"><b>Размер:</b> 80х55 см</li>
-				<li class="paintings material"><b>Материал:</b> Холст</li>
-				<li class="paintings frame"><b>Наличие рамы:</b> Есть</li>
-				<li class="paintings passe-partout"><b>Наличие паспарту:</b> Нет</li>
-				<li class="paintings creation-year"><b>Год написания:</b> 2013</li>
-				<div class="wrap">
-					<button class="add-to-cart-button" type="submit" name="add-to-cart">Купить</button>
-				</div>
+	<div class="main-right">
+		<section class="product">
+			<div class="left-side">
+				<img src="{% static 'categories/paintings/Масло/6.jpg' %}" alt="painting">
 			</div>
-		</ul>
+			<div class="right-side">
+				<ul class="paintings-info">
+					<li class="paintings title">Журавли</li>
+					<li class="paintings price">6000 ₽</li>
+					<li class="paintings genre"><b>Жанр:</b> Пейзаж</li>
+					<li class="paintings technique"><b>Техника:</b> Масло</li>
+					<li class="paintings size"><b>Размер:</b> 80х55 см</li>
+					<li class="paintings material"><b>Материал:</b> Холст</li>
+					<li class="paintings frame"><b>Наличие подрамника:</b> Есть</li>
+					<li class="paintings frame"><b>Наличие багета:</b> Нет</li>
+					<li class="paintings passe-partout"><b>Наличие паспарту:</b> Нет</li>
+					<li class="paintings frame"><b>Оформление:</b> Нет</li>
+					<li class="paintings creation-year"><b>Год написания:</b> 2013</li>
+					<div class="wrap">
+						<button class="add-to-cart-button" type="submit" name="add-to-cart">КУПИТЬ</button>
+					</div>
+				</ul>
+			</div>
+		</section>
 	</div>
-</div>
 {% endblock %}
 

@@ -6,6 +6,18 @@ def home(request: HttpRequest):
     return HttpResponse(render(request, 'home.html', {}))
 
 
+def paintings(request: HttpRequest):
+    return HttpResponse(render(request, 'paintings.html', {}))
+
+
+def stuffed_toys(request: HttpRequest):
+    return HttpResponse(render(request, 'stuffed_toys.html', {}))
+
+
+def brooches(request: HttpRequest):
+    return HttpResponse(render(request, 'brooches.html', {}))
+
+
 def product(request: HttpRequest):
     return HttpResponse(render(request, 'product.html', {}))
 
