@@ -1,4 +1,4 @@
-{% extends 'universal.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block head %}
@@ -23,8 +23,8 @@
 		<aside class="aside-search">
 			<h4>Поиск продукта</h4>
 			<form class="form-search-main" action="/search" method="get">
-				<input class="search-input" type="text" name="search" placeholder="Поиск">
-				<button class="search-button" type="submit">
+				<input class="product-search search-input" type="text" name="search" placeholder="Поиск">
+				<button class="search-button">
 					<img src="{% static 'images/search.png' %}" alt="search" width="30" height="30">
 				</button>
 			</form>
@@ -61,9 +61,7 @@
 					<li class="paintings passe-partout"><b>Наличие паспарту:</b> Нет</li>
 					<li class="paintings frame"><b>Оформление:</b> Нет</li>
 					<li class="paintings creation-year"><b>Год написания:</b> 2013</li>
-					<div class="wrap">
-						<button class="add-to-cart-button" type="submit" name="add-to-cart">КУПИТЬ</button>
-					</div>
+					<button class="add-to-cart-button" type='submit' name='add_to_cart'>КУПИТЬ</button>
 				</ul>
 			</div>
 		</section>

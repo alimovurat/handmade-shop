@@ -49,6 +49,8 @@
 
 /* main */
 
+/* Корзина */
+
 .products-in-cart {
 	display: block;
 	border: 1px solid #e0e0e0;
@@ -188,10 +190,11 @@
 
 /* Gradient button */
 
-button[type=submit] {
+.products-in-cart button,
+.checkout-button {
 	width: 180px;
 	height: 50px;
-	border: none;
+	font-weight: bold;
 	outline: none;
 	color: indigo;
 	border: 1px solid #e0e0e0;
@@ -199,9 +202,11 @@ button[type=submit] {
 	position: relative;
 	z-index: 0;
 	border-radius: 10px;
+	font-family: 'roboto';
 }
 
-button[type=submit]:before {
+.products-in-cart button:before,
+.checkout-button:before {
 	content: '';
 	background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
 	position: absolute;
@@ -218,19 +223,23 @@ button[type=submit]:before {
 	border-radius: 10px;
 }
 
-button[type=submit]:active {
+.products-in-cart button:active,
+.checkout-button:active {
 	color: #000
 }
 
-button[type=submit]:active:after {
+.products-in-cart button:active:after,
+.checkout-button:active:after {
 	background: transparent;
 }
 
-button[type=submit]:hover:before {
+.products-in-cart button:hover:before,
+.checkout-button:hover:before {
 	opacity: 1;
 }
 
-button[type=submit]:after {
+.products-in-cart button:after,
+.checkout-button:after {
 	z-index: -1;
 	content: '';
 	position: absolute;
@@ -254,4 +263,129 @@ button[type=submit]:after {
 	100% {
 		background-position: 0 0;
 	}
+}
+
+/* Регистрация */
+
+.delivery-registration {
+	margin-top: 20px;
+	padding: 20px 0;
+	align-items: baseline;
+}
+
+.client-info {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.registration-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 50%;
+	padding: 10px;
+}
+
+.registration-form label {
+	font-size: 14px;
+	margin-bottom: 2px;
+}
+
+.required {
+	color: #ff0000;
+}
+
+.form-row {
+	display: flex;
+	justify-content: space-between;
+	flex: 1;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	margin: 10px;
+	width: 100%;
+}
+
+.first-name,
+.last-name {
+	width: 50%;
+}
+
+.registration-input {
+	border: none;
+	padding: 13px 13px;
+	background-color: rgb(245, 245, 245);
+	font-size: 15px;
+}
+
+.create-account-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 10px;
+}
+
+.create-account-form label {
+	margin: 0;
+	margin-left: 5px;
+}
+
+#password-form,
+#password-confirm-form {
+	display: none;
+}
+
+.delivery-registration h4 {
+	margin-bottom: 30px;
+}
+
+.checkbox-row {
+	margin: 3px 0;
+}
+
+.password,
+.password-confirm {
+	max-width: 579px;
+}
+
+/* Доставка */
+
+.delivery-form {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+}
+
+.delivery-method,
+.payment-method {
+	margin-bottom: 40px;
+}
+
+/* Комментарий к заказу */
+
+.order-comment {
+	margin: 20px 0;
+}
+
+.order-comment textarea {
+	margin-top: 10px;
+	font-size: 19px;
+}
+
+/* Расположение кнопки */
+
+.bottom-right {
+	margin-top: 20px 10px auto 0;
+	margin-right: 15px;
+	margin-left: auto;
+	font-size: medium;
+	color: white;
+	border-color: rgb(228, 3, 3);
+}
+
+.bottom-right:after {
+	background-color: rgb(228, 3, 3);
 }

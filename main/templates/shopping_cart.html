@@ -1,4 +1,4 @@
-{% extends 'universal.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block head %}
@@ -17,86 +17,189 @@
 		<li>Корзина</li>
 	</ul>
 </section>
-<div class='container products-in-cart'>
-	<div class='top'>
-		<div>
-			<img src="{% static '/images/products-in-cart.png' %}" alt="products-in-cart" widht=30px height= 30px>
+<section class='section-main'>
+	<div class='container products-in-cart'>
+		<div class='top'>
+			<div>
+				<img src="{% static '/images/products-in-cart.png' %}" alt="products-in-cart" widht=30px height= 30px>
+			</div>
+			<div>
+				<h3>Товаров в корзине (2)</h3>
+			</div>
+			<div class='empty-cart-button'>
+				<button>ОЧИСТИТЬ КОРЗИНУ</button>
+			</div>
 		</div>
-		<div>
-			<h3>Товаров в корзине (2)</h3>
+		<div class='center'>
+			<div class='center-left'>
+				<img src="{% static 'categories/paintings/Масло/6.jpg' %}" alt="painting">
+			</div>
+			<div class='center-right'>
+				<div class='product-title'>Журавли</div>
+				<div class='product-info'>
+					<ul>
+						<li><b>Категория:</b> Картина,</li>
+						<li><b>Размер:</b> 80х55 см,</li>
+						<li><b>Материал:</b> Холст,</li>
+						<li><b>Наличие подрамника:</b> Есть,</li>
+						<li><b>Наличие багета:</b> Нет,</li>
+					</ul>
+					<ul>
+						<li><b>Оформление:</b> Нет,</li>
+						<li><b>Наличие паспарту:</b> Нет</li>
+					</ul>
+				</div>
+				<div class='product-price'>
+					<div class='price'><b>Цена:</b> 6000 ₽</div>
+				</div>
+			</div>
+			<img class='remove-product-button' src="{% static '/images/remove-3.png' %}" alt="remove" width=30px height=30px>
 		</div>
-		<div class='empty-cart-button'>
-			<button type='submit' name='back'>ОЧИСТИТЬ КОРЗИНУ</button>
+		<div class='center'>
+			<div class='center-left'>
+				<img src="{% static 'categories/paintings/акварель/4.jpg' %}" alt="painting">
+			</div>
+			<div class='center-right'>
+				<div class='product-title'>Кот</div>
+				<div class='product-info'>
+					<ul>
+						<li><b>Категория:</b> Картина,</li>
+						<li><b>Размер:</b> 44х54 см,</li>
+						<li><b>Материал:</b> Холст,</li>
+						<li><b>Наличие подрамника:</b> Нет,</li>
+						<li><b>Наличие багета:</b> Есть,</li>
+					</ul>
+					<ul>
+						<li><b>Оформление:</b> Плёнка,</li>
+						<li><b>Наличие паспарту:</b> Нет</li>
+					</ul>
+				</div>
+				<div class='product-price'>
+					<div class='price'><b>Цена:</b> 3000 ₽</div>
+				</div>
+			</div>
+			<img class='remove-product-button' src="{% static '/images/remove-3.png' %}" alt="remove" width=30px height=30px>
+		</div>
+		<div class='bottom'>
+			<div class='back-button'>
+				<a href="{% url 'paintings' %}"><button>НАЗАД К ПОКУПКАМ</button></a>
+			</div>
+			<div class='total-price in-cart'>
+				<div class='total'>
+					<p><span class='grey'>Итого</span></p>
+					<p><b>9000 ₽</b></p>
+				</div>
+				<div class='delivery'>
+					<p><span class='grey'>Доставка</span></p>
+					<p><b>500 ₽</b></p>
+				</div>
+				<div class='to-pay'>
+					<p><span class='grey'>К оплате</span></p>
+					<p><b>9500 ₽</b></p>
+				</div>
+			</div>
 		</div>
 	</div>
-	<div class='center'>
-		<div class='center-left'>
-			<img src="{% static 'categories/paintings/Масло/6.jpg' %}" alt="painting">
-		</div>
-		<div class='center-right'>
-			<div class='product-title'>Журавли</div>
-			<div class='product-info'>
-				<ul>
-					<li><b>Категория:</b> Картина,</li>
-					<li><b>Размер:</b> 80х55 см,</li>
-					<li><b>Материал:</b> Холст,</li>
-					<li><b>Наличие подрамника:</b> Есть,</li>
-					<li><b>Наличие багета:</b> Нет,</li>
-				</ul>
-				<ul>
-					<li><b>Оформление:</b> Нет,</li>
-					<li><b>Наличие паспарту:</b> Нет</li>
-				</ul>
+	<div class='container delivery-registration'>
+		<div class='registration-form'>
+			<div class='form-row client-info'>
+				<h4>ДАННЫЕ О ЗАКАЗЧИКЕ</h4>
 			</div>
-			<div class='product-price'>
-				<div class='price'><b>Цена:</b> 6000 ₽</div>
+			<div class='form-row'>
+				<div class='first-name form'>
+					<label for="first-name">ИМЯ <span class="required">*</span></label>
+					<input class='registration-input' type="text" name="first-name" id="first-name">
+				</div>
+				<div class='last-name form'>
+					<label for="last-name">ФАМИЛИЯ <span class="required">*</span></label>
+					<input class='registration-input' type="text" name="last-name" id="last-name">
+				</div>
 			</div>
-		</div>
-		<img class='remove-product-button' src="{% static '/images/remove-3.png' %}" alt="remove" width=30px height=30px>
-	</div>
-	<div class='center'>
-		<div class='center-left'>
-			<img src="{% static 'categories/paintings/акварель/4.jpg' %}" alt="painting">
-		</div>
-		<div class='center-right'>
-			<div class='product-title'>Кот</div>
-			<div class='product-info'>
-				<ul>
-					<li><b>Категория:</b> Картина,</li>
-					<li><b>Размер:</b> 44х54 см,</li>
-					<li><b>Материал:</b> Холст,</li>
-					<li><b>Наличие подрамника:</b> Нет,</li>
-					<li><b>Наличие багета:</b> Есть,</li>
-				</ul>
-				<ul>
-					<li><b>Оформление:</b> Плёнка,</li>
-					<li><b>Наличие паспарту:</b> Нет</li>
-				</ul>
+			<div class='form-row'>
+				<div class='city form'>
+					<label for="city">ГОРОД / НАСЕЛЁННЫЙ ПУНКТ <span class="required">*</span></label>
+					<input class='registration-input' type="text" name="city" id="city">
+				</div>
 			</div>
-			<div class='product-price'>
-				<div class='price'><b>Цена:</b> 3000 ₽</div>
+			<div class='form-row'>
+				<div class='street form'>
+					<label for="street">УЛИЦА / ДОМ / КОРПУС <span class="required">*</span></label>
+					<input class='registration-input' type="text" name="street" id="street">
+				</div>
 			</div>
-		</div>
-		<img class='remove-product-button' src="{% static '/images/remove-3.png' %}" alt="remove" width=30px height=30px>
-	</div>
-	<div class='bottom'>
-		<div class='back-button'>
-			<a href="{% url 'paintings' %}"><button type='submit' name='back'>НАЗАД К ПОКУПКАМ</button></a>
-		</div>
-		<div class='total-price in-cart'>
-			<div class='total'>
-				<p><span class='grey'>Итого</span></p>
-				<p><b>9000 ₽</b></p>
+			<div class='form-row'>
+				<div class='apartment form'>
+					<label for="apartment">КВАРТИРА / ДОМ<span class="required">*</span></label>
+					<input class='registration-input' type="text" name="apartment" id="apartment">
+				</div>
 			</div>
-			<div class='delivery'>
-				<p><span class='grey'>Доставка</span></p>
-				<p><b>500 ₽</b></p>
+			<div class='form-row'>
+				<div class='phone form'>
+					<label for="phone">ТЕЛЕФОН <span class="required">*</span></label>
+					<input class='registration-input' type="text" name="phone" id="phone">
+				</div>
 			</div>
-			<div class='to-pay'>
-				<p><span class='grey'>К оплате</span></p>
-				<p><b>9500 ₽</b></p>
+			<div class='form-row'>
+				<div class='email form'>
+					<label for="email">EMAIL <span class="required">*</span></label>
+					<input class='registration-input' type="text" name="email" id="email">
+				</div>
+			</div>
+			<div class='create-account-form'>
+				<input type="checkbox" id="create-account">
+				<label for="create-account">ЗАРЕГИСТРИРОВАТЬ АККАУНТ</label>
+			</div>
+			<div class='form-row' id='password-form'>
+				<div class='password form'>
+					<label for="password">ПАРОЛЬ <span class="required">*</span></label>
+					<input class='registration-input' type="password" name="password" id="password">
+				</div>
+			</div>
+			<div class='form-row' id='password-confirm-form'>
+				<div class='password-confirm form'>
+					<label for="password-confirm">ПОДТВЕРЖДЕНИЕ ПАРОЛЯ <span class="required">*</span></label>
+					<input class='registration-input' type="password" name="password-confirm" id="password-confirm">
+				</div>
 			</div>
 		</div>
-	</div>
-</div>
+		<div class='delivery-form'>
+			<div class='delivery-method'>
+				<h4>СПОСОБ ДОСТАВКИ</h4>
+				<div class='express-delivery checkbox-row'>
+					<input type="radio" name='delivery-choice'>
+					<label for="delivery-choice">Курьером до двери или в ПВЗ по всей России - 500 Руб.</label>
+				</div>
+				<div class='express-delivery checkbox-row'>
+					<input type="radio" name='delivery-choice'>
+					<label for="delivery-choice">Курьером до двери по г. Набережные Челны - 300 Руб.</label>
+				</div>
+				<div class='pickup checkbox-row'>
+					<input type="radio" name='delivery-choice'>
+					<label for="delivery-choice">Самовывоз: г. Набережные Челны - бесплатно.</label>
+				</div>
+			</div>
+			<div class='payment-method'>
+				<h4>СПОСОБ ОПЛАТЫ</h4>
+				<div class='cash-payment checkbox-row'>
+					<input type="radio" name='payment'>
+					<label for="payment">Оплата наличными при получении.</label>
+				</div>
+				<div class='card-payment checkbox-row'>
+					<input type="radio" name='payment'>
+					<label for="payment">Оплата онлайн банковской картой.</label>
+				</div>
+			</div>
+			<div class='order-comment'>
+				<label for="comment"><b>КОММЕНТАРИЙ К ЗАКАЗУ:</b></label><br>
+				<textarea id="comment" name="comment" rows="4" cols="50"></textarea><br>
+			</div>
+			<button class='checkout-button bottom-right' type='submit' name='checkout'>ОФОРМИТЬ ЗАКАЗ</button>
+		</div>
+	</div>	
+</section>
 {% endblock %}
+
+{% block scripts %}
+<script src="{% static 'scripts/shopping_cart.js' %}"></script>
+{% endblock %}
+

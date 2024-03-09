@@ -1,4 +1,4 @@
-{% extends 'universal.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block head %}
@@ -22,8 +22,8 @@
 		<aside class="aside-search">
 			<h4>Поиск продукта</h4>
 			<form class="form-search-main" action="/search" method="get">
-				<input class="search-input" type="text" name="search" placeholder="Поиск">
-				<button class="search-button" type="search">
+				<input class="product-search search-input" type="text" name="search" placeholder="Поиск">
+				<button class="search-button">
 					<img src="{% static 'images/search.png' %}" alt="search" width="30" height="30">
 				</button>
 			</form>
