@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>UniversalPage</title>
-	<link rel="stylesheet" href="{% static 'styles/universal.css' %}">
+	<link rel="stylesheet" href="{% static 'styles/base.css' %}">
 	{% block head %}
 	{% endblock %}
 </head>
@@ -15,21 +15,16 @@
 	<div class="home-page">
 		<header>
 			<div class="top-bar">
-				<div class="container">
-					<div class="top-bar-left">
-						<!-- pass -->
-					</div>
-					<div class="top-bar-right">
-						<ul class="top-bar-menu">
-							<li class="top-bar-menu-item home"><a class="top-bar-links" href="{% url 'paintings' %}">Главная</a>
-							</li>
-							<li class="top-bar-menu-item"><a class="top-bar-links" href="{% url 'shopping_cart' %}">Корзина</a></li>
-							<li class="top-bar-menu-item"><a class="top-bar-links"
-									href="https://themes.g5plus.net/handmade/home-01/" target="_blank">Блог</a></li>
-							<li class="top-bar-menu-item"><a class="top-bar-links" href="authorization.html">Войти</a>
-							</li>
-						</ul>
-					</div>
+				<div class="container top-right">
+					<ul class="top-bar-menu">
+						<li class="top-bar-menu-item home"><a class="top-bar-links" href="{% url 'paintings' %}">Главная</a>
+						</li>
+						<li class="top-bar-menu-item"><a class="top-bar-links" href="{% url 'shopping_cart' %}">Корзина</a></li>
+						<li class="top-bar-menu-item"><a class="top-bar-links"
+								href="https://themes.g5plus.net/handmade/home-01/" target="_blank">Блог</a></li>
+						<li class="top-bar-menu-item"><a class="top-bar-links" href="authorization.html">Войти</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 			<div class="header-categories-search">
@@ -47,8 +42,8 @@
 										<option value="stuffed-toys">Мягкие игрушки</option>
 										<option value="brooches">Броши</option>
 									</select>
-									<input type="text" name="search" placeholder="Поиск">
-									<button class="search-button" type="search">
+									<input class='product-search' type="text" name="search" placeholder="Поиск">
+									<button class="search-button">
 										<img src="{% static 'images/search.png' %}" alt="search" , width="30" , height="30">
 									</button>
 								</form>
@@ -124,6 +119,8 @@
 			</div>
 		</footer>
 	</div>
+	{% block scripts %}
+	{% endblock %}
 </body>
 
 </html>
