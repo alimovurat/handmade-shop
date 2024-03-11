@@ -8,7 +8,7 @@
 
 .page-title {
 	height: 260px;
-	background-image: url("../images/background-brooches.jpg");
+	background-image: url("../images/background-pay-and-delivery.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	font-family: "frankinity";
@@ -50,7 +50,23 @@
 /* main */
 
 .pay-and-delivery {
-    flex-direction: column;
-    justify-self: left;
-    
+	flex-direction: column;
+	align-items: baseline;
+	border: 1px solid #e0e0e0;
+	margin: 20px auto;
+	border-radius: 10px;
+	padding: 20px;
+}
+
+.delivery-price {
+	font-size: x-large;
+	font-weight: bold;
+	padding: 0;
+	list-style-position: inside;
+}
+
+.delivery-price li {
+	font-size: medium;
+	font-weight: 100;
+	margin-top: 10px;
 }
