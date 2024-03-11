@@ -24,3 +24,7 @@ def product(request: HttpRequest):
 
 def shopping_cart(request: HttpRequest):
     return HttpResponse(render(request, 'shopping_cart.html', {}))
+
+
+def delivery(request: HttpRequest):
+    return HttpResponse(render(request, 'delivery.html', {}))

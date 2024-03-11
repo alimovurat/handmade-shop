@@ -93,7 +93,7 @@ a {
 .modal-content {
 	width: 450px;
 	background-color: #fefefe;
-	margin: 25% auto;
+	margin: 15% auto;
 	padding: 60px;
 	flex-direction: column;
 	position: relative;
@@ -433,11 +433,6 @@ footer {
 	display: flex;
 	justify-content: center;
 	margin-top: 20px;
-}
-
-
-h3 {
-	font-size: x-large;
 }
 
 .social-icon img {

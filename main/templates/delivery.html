@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<title>Pay and delivery</title>
+<link rel="stylesheet" href="{% static 'styles/delivery.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="section-title">
+	<div class="container page-title">
+		<h1>Оплата и доставка</h1>
+	</div>
+</section>
+<section class="page-path container">
+	<ul>
+		<li class="home">Главная</li>
+		<li>Оплата и доставка</li>
+	</ul>
+</section>
+<div class="container pay-and-delivery">
+    <h2>Оплата и доставка</h2>
+    <p>Доставка продукции осуществляется по всей России. Срок доставки зависит от региона. Продукция изготавливается в течение 1-3 дней и на следующий день после изготовления передаётся на доставку. При доставке курьером у вас будет время удостовериться в качестве товара в течение 10 минут. Менеджер предупредит заранее о дате и времени доставки позвонив по указанному в заказе телефону.</p>
+    <h3>Стоимость доставки</h3>
+</div>
+
+{% endblock %}

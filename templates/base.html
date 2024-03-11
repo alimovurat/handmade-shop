@@ -5,7 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>UniversalPage</title>
+	<title>Base</title>
 	<link rel="stylesheet" href="{% static 'styles/base.css' %}">
 	{% block head %}
 	{% endblock %}
@@ -114,7 +114,7 @@
 							</li>
 							<li class="menu-item">Обо мне</li>
 							<li class="menu-item">Портфолио</li>
-							<li class="menu-item">Оплата и доставка</li>
+							<li class="menu-item"><a class="top-bar-links" href="{% url 'delivery' %}">Оплата и доставка</a></li>
 							<li class="menu-item">Контакты</li>
 							<li class="menu-item">Новые посты</li>
 						</ul>
@@ -128,7 +128,7 @@
 		</main>
 		<footer>
 			<div class="contacts">
-				<h3>Мои контакты</h3>
+				<h2>Мои контакты</h2>
 				<div>
 					<p>+79600852218</p>
 					<p>Florencia19@mail.ru</p>

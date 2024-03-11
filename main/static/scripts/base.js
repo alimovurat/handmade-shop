@@ -2,6 +2,7 @@
 
 document.getElementById('openModalBtn').addEventListener('click', function () {
 	document.getElementById('registrationModal').style.display = 'block';
+	document.getElementById('registerForm').style.display = 'none';
 });
 
 document.getElementsByClassName('close')[0].addEventListener('click', function () {
