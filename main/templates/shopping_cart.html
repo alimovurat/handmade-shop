@@ -26,9 +26,7 @@
 			<div>
 				<h3>Товаров в корзине (2)</h3>
 			</div>
-			<div class='empty-cart-button'>
-				<button>ОЧИСТИТЬ КОРЗИНУ</button>
-			</div>
+			<button class='gradient-button empty-cart-button'>ОЧИСТИТЬ КОРЗИНУ</button>
 		</div>
 		<div class='center'>
 			<div class='center-left'>
@@ -81,9 +79,7 @@
 			<img class='remove-product-button' src="{% static '/images/remove-3.png' %}" alt="remove" width=30px height=30px>
 		</div>
 		<div class='bottom'>
-			<div class='back-button'>
-				<a href="{% url 'paintings' %}"><button>НАЗАД К ПОКУПКАМ</button></a>
-			</div>
+			<a href="{% url 'paintings' %}"><button class='gradient-button back-button'>НАЗАД К ПОКУПКАМ</button></a>
 			<div class='total-price in-cart'>
 				<div class='total'>
 					<p><span class='grey'>Итого</span></p>
@@ -108,41 +104,41 @@
 			<div class='form-row'>
 				<div class='first-name form'>
 					<label for="first-name">ИМЯ <span class="required">*</span></label>
-					<input class='registration-input' type="text" name="first-name" id="first-name">
+					<input class='registration-input' type="text" name="first-name" id="first-name" required>
 				</div>
 				<div class='last-name form'>
 					<label for="last-name">ФАМИЛИЯ <span class="required">*</span></label>
-					<input class='registration-input' type="text" name="last-name" id="last-name">
+					<input class='registration-input' type="text" name="last-name" id="last-name" required>
 				</div>
 			</div>
 			<div class='form-row'>
 				<div class='city form'>
 					<label for="city">ГОРОД / НАСЕЛЁННЫЙ ПУНКТ <span class="required">*</span></label>
-					<input class='registration-input' type="text" name="city" id="city">
+					<input class='registration-input' type="text" name="city" id="city" required>
 				</div>
 			</div>
 			<div class='form-row'>
 				<div class='street form'>
 					<label for="street">УЛИЦА / ДОМ / КОРПУС <span class="required">*</span></label>
-					<input class='registration-input' type="text" name="street" id="street">
+					<input class='registration-input' type="text" name="street" id="street" required>
 				</div>
 			</div>
 			<div class='form-row'>
 				<div class='apartment form'>
 					<label for="apartment">КВАРТИРА / ДОМ<span class="required">*</span></label>
-					<input class='registration-input' type="text" name="apartment" id="apartment">
+					<input class='registration-input' type="text" name="apartment" id="apartment" required>
 				</div>
 			</div>
 			<div class='form-row'>
 				<div class='phone form'>
 					<label for="phone">ТЕЛЕФОН <span class="required">*</span></label>
-					<input class='registration-input' type="text" name="phone" id="phone">
+					<input class='registration-input' type="text" name="phone" id="phone" required>
 				</div>
 			</div>
 			<div class='form-row'>
 				<div class='email form'>
 					<label for="email">EMAIL <span class="required">*</span></label>
-					<input class='registration-input' type="text" name="email" id="email">
+					<input class='registration-input' type="text" name="email" id="email" required>
 				</div>
 			</div>
 			<div class='create-account-form'>
@@ -151,14 +147,23 @@
 			</div>
 			<div class='form-row' id='password-form'>
 				<div class='password form'>
-					<label for="password">ПАРОЛЬ <span class="required">*</span></label>
-					<input class='registration-input' type="password" name="password" id="password">
+					<label for="reg-password">ПАРОЛЬ <span class="required">*</span></label>
+					<input class='registration-input' type="password" name="password" id="reg-password" required>
+					<div id="reg-message">
+						<h4>Пароль должен содержать следующее:</h4>
+						<div class="password-strength-check">
+							<p id="reg-letter" class="invalid">Маленькие буквы</p>
+							<p id="reg-capital" class="invalid">Большие буквы</p>
+							<p id="reg-number" class="invalid">Число</p>
+							<p id="reg-length" class="invalid">Минимум 8 символов</p>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div class='form-row' id='password-confirm-form'>
 				<div class='password-confirm form'>
 					<label for="password-confirm">ПОДТВЕРЖДЕНИЕ ПАРОЛЯ <span class="required">*</span></label>
-					<input class='registration-input' type="password" name="password-confirm" id="password-confirm">
+					<input class='registration-input' type="password" name="password-confirm" id="password-confirm" required>
 				</div>
 			</div>
 		</div>
@@ -193,7 +198,7 @@
 				<label for="comment"><b>КОММЕНТАРИЙ К ЗАКАЗУ:</b></label><br>
 				<textarea id="comment" name="comment" rows="4" cols="50"></textarea><br>
 			</div>
-			<button class='checkout-button bottom-right' type='submit' name='checkout'>ОФОРМИТЬ ЗАКАЗ</button>
+			<button class='gradient-button checkout-button' type='submit' name='checkout'>ОФОРМИТЬ ЗАКАЗ</button>
 		</div>
 	</div>	
 </section>
