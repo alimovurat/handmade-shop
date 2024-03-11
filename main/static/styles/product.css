@@ -136,7 +136,6 @@ main {
 	position: relative;
 	width: 40%;
 	height: 450px;
-	z-index: 2;
 	text-align: left;
 	background-color: white;
 	margin-left: 30px;
@@ -169,159 +168,13 @@ main {
 	padding-top: 20px;
 }
 
-/* 3D кнопка */
-
-/* .wrap {
-	display: flex;
-	align-items: center;
-	justify-content: left;
-	position: absolute;
-	bottom: 0;
-}
-
-.add-to-cart-button {
-	font-size: 15px;
-	font-weight: 700;
-	font-family: "roboto";
-	border: 2px solid violet;
-	border-radius: 1000px;
-	transition: all 0.3s ease-in-out 0s;
-	cursor: pointer;
-	outline: none;
-	position: relative;
-	padding: 7px 19px;
-	background-color: white;
-}
-
-.add-to-cart-button::before {
-	content: '';
-	border-radius: 1000px;
-	min-width: calc(82px + 12px);
-	min-height: calc(20px + 12px);
-	box-shadow: 0 0 30px violet;
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	opacity: 0;
-	transition: all .3s ease-in-out 0s;
-}
-
-.add-to-cart-button:hover,
-.add-to-cart-button:focus {
-	transform: translateY(-6px);
-	color: indigo;
-	border-color: white;
-}
-
-.add-to-cart-button:hover::before,
-.add-to-cart-button:focus::before {
-	opacity: 1;
-}
-
-.add-to-cart-button::after {
-	content: '';
-	width: 30px;
-	height: 30px;
-	border-radius: 1000px;
-	border: 2px solid #f700ff;
-	position: absolute;
-	z-index: -1;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	animation: ring 1.5s infinite;
-}
-
-.add-to-cart-button:hover::after,
-.add-to-cart-button:focus::after {
-	animation: none;
-	display: none;
-}
-
-@keyframes ring {
-	0% {
-		width: 30px;
-		height: 30px;
-		opacity: 1;
-	}
-
-	100% {
-		width: 120px;
-		height: 50px;
-		opacity: 0;
-	}
-} */
-
-/* Gradient button */
+/* add-to-cart-button */
 
 .add-to-cart-button {
 	margin-top: 20px;
 	width: 180px;
 	height: 50px;
 	font-size: large;
-	font-weight: bold;
-	outline: none;
 	color: red;
 	border: none;
-	cursor: pointer;
-	position: relative;
-	z-index: 0;
-	border-radius: 10px;
-	font-family: 'roboto';
-}
-
-.add-to-cart-button:before {
-	content: '';
-	background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-	position: absolute;
-	top: -2px;
-	left: -2px;
-	background-size: 400%;
-	z-index: -1;
-	filter: blur(5px);
-	width: calc(100% + 4px);
-	height: calc(100% + 4px);
-	animation: glowing 20s linear infinite;
-	opacity: 0;
-	transition: opacity .3s ease-in-out;
-	border-radius: 10px;
-}
-
-.add-to-cart-button:active {
-	color: #000
-}
-
-.add-to-cart-button:active:after {
-	background: transparent;
-}
-
-.add-to-cart-button:hover:before {
-	opacity: 1;
-}
-
-.add-to-cart-button:after {
-	z-index: -1;
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: white;
-	left: 0;
-	top: 0;
-	border-radius: 10px;
-}
-
-@keyframes glowing {
-	0% {
-		background-position: 0 0;
-	}
-
-	50% {
-		background-position: 400% 0;
-	}
-
-	100% {
-		background-position: 0 0;
-	}
 }

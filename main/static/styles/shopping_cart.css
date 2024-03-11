@@ -47,8 +47,6 @@
 	padding-left: 0;
 }
 
-/* main */
-
 /* Корзина */
 
 .products-in-cart {
@@ -75,11 +73,6 @@
 .top h3 {
 	margin: 0;
 	font-size: larger;
-}
-
-.empty-cart-button {
-	margin-left: auto;
-	margin-right: 0;
 }
 
 .center {
@@ -188,82 +181,51 @@
 	color: rgb(159, 159, 159);
 }
 
-/* Gradient button */
+/* empty-cart-button */
 
-.products-in-cart button,
+.empty-cart-button {
+	margin-left: auto;
+	margin-right: 0;
+	width: 180px;
+	height: 50px;
+}
+
+/* back-button */
+
+.back-button {
+	width: 180px;
+	height: 50px;
+}
+
+/* checkout-button */
+
 .checkout-button {
 	width: 180px;
 	height: 50px;
-	font-weight: bold;
-	outline: none;
-	color: indigo;
-	border: 1px solid #e0e0e0;
-	cursor: pointer;
-	position: relative;
-	z-index: 0;
-	border-radius: 10px;
-	font-family: 'roboto';
+	margin-top: 20px 10px auto 0;
+	margin-right: 15px;
+	margin-left: auto;
+	font-size: medium;
+	color: white;
+	border-color: rgb(228, 3, 3);
 }
 
-.products-in-cart button:before,
-.checkout-button:before {
-	content: '';
-	background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-	position: absolute;
-	top: -2px;
-	left: -2px;
-	background-size: 400%;
-	z-index: -1;
-	filter: blur(5px);
-	width: calc(100% + 4px);
-	height: calc(100% + 4px);
-	animation: glowing 20s linear infinite;
-	opacity: 0;
-	transition: opacity .3s ease-in-out;
-	border-radius: 10px;
+.checkout-button:after {
+	background-color: rgb(228, 3, 3);
 }
 
-.products-in-cart button:active,
-.checkout-button:active {
-	color: #000
+.checkout-button:hover {
+	color: red;
 }
 
-.products-in-cart button:active:after,
-.checkout-button:active:after {
+.checkout-button:hover::after {
+	background-color: white;
+}
+
+.checkout-button:active::after {
 	background: transparent;
 }
 
-.products-in-cart button:hover:before,
-.checkout-button:hover:before {
-	opacity: 1;
-}
-
-.products-in-cart button:after,
-.checkout-button:after {
-	z-index: -1;
-	content: '';
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: white;
-	left: 0;
-	top: 0;
-	border-radius: 10px;
-}
-
-@keyframes glowing {
-	0% {
-		background-position: 0 0;
-	}
-
-	50% {
-		background-position: 400% 0;
-	}
-
-	100% {
-		background-position: 0 0;
-	}
-}
 
 /* Регистрация */
 
@@ -350,6 +312,16 @@
 	max-width: 579px;
 }
 
+/* Окно проверки пароля */
+
+#reg-message {
+	display: none;
+	position: relative;
+	flex-direction: column;
+	align-items: center;
+	line-height: 5px;
+}
+
 /* Доставка */
 
 .delivery-form {
@@ -373,19 +345,4 @@
 .order-comment textarea {
 	margin-top: 10px;
 	font-size: 19px;
-}
-
-/* Расположение кнопки */
-
-.bottom-right {
-	margin-top: 20px 10px auto 0;
-	margin-right: 15px;
-	margin-left: auto;
-	font-size: medium;
-	color: white;
-	border-color: rgb(228, 3, 3);
-}
-
-.bottom-right:after {
-	background-color: rgb(228, 3, 3);
 }
