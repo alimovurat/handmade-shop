@@ -28,3 +28,4 @@ def shopping_cart(request: HttpRequest):
 
 def delivery(request: HttpRequest):
     return HttpResponse(render(request, 'delivery.html', {}))
+
