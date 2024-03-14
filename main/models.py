@@ -4,24 +4,25 @@ from django.utils.translation import gettext_lazy as _
 
 class Category(models.Model):
 
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=50, verbose_name='Название')
     parent = models.ForeignKey(
         "self",
         on_delete=models.PROTECT,
         null=True,
-        blank=True
+        blank=True,
+        verbose_name='Родительская категория'
     )
 
     class Meta:
-        verbose_name = _("category")
-        verbose_name_plural = _("categories")
+        verbose_name = _("категория")
+        verbose_name_plural = _("категории")
 
     def __str__(self):
-        return f'{self.name} | parent - {self.parent}' if self.parent else self.name
+        return f'{self.name} | родитель - {self.parent}' if self.parent else self.name
 
     @classmethod
     def get_default_pk(cls):
-        obj, created = cls.objects.get_or_create(name="No category")
+        obj, created = cls.objects.get_or_create(name="Нет категории")
         return obj.pk
 
 
@@ -31,28 +32,28 @@ class Product(models.Model):
         Category,
         on_delete=models.SET_DEFAULT,
         default=Category.get_default_pk,
-        related_name='+'
+        related_name='+', 
+        verbose_name='Категория'
     )
-    image = models.ImageField(upload_to='product', null=True)
-    title = models.CharField(max_length=255, blank=False)
-    description = models.TextField(blank=True)
-    price = models.DecimalField(max_digits=8, decimal_places=2)
-    discount_price = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True)
-    count = models.IntegerField(default=1)
-    genre = models.CharField(max_length=255, blank=True)
-    technique = models.CharField(max_length=255, blank=True)
-    size = models.CharField(max_length=255, blank=False, null=True)
-    material = models.CharField(max_length=255, blank=False, null=True)
-    frame = models.BooleanField(null=True, blank=True)
-    baguette = models.BooleanField(null=True, blank=True)
-    passe_partout = models.BooleanField(null=True, blank=True)
-    decor = models.CharField(max_length=255, blank=True)
-    creation_year = models.IntegerField(default=0, blank=True)
-    # attributes = models.JSONField(null=True, blank=True)
+    image = models.ImageField(upload_to='product', null=True, verbose_name='Изображение')
+    title = models.CharField(max_length=255, blank=False, verbose_name='Название')
+    description = models.TextField(blank=True, verbose_name='Описание')
+    price = models.DecimalField(max_digits=8, decimal_places=2, verbose_name='Цена')
+    discount_price = models.DecimalField(max_digits=8, decimal_places=2, blank=True, null=True, verbose_name='Цена со скидкой')
+    count = models.IntegerField(default=1, verbose_name='Количество')
+    genre = models.CharField(max_length=255, blank=True, verbose_name='Жанр')
+    technique = models.CharField(max_length=255, blank=True, verbose_name='Техника')
+    size = models.CharField(max_length=255, blank=False, null=True, verbose_name='Размер')
+    material = models.CharField(max_length=255, blank=False, null=True, verbose_name='Материал')
+    frame = models.BooleanField(null=True, blank=True, verbose_name='Рамка')
+    baguette = models.BooleanField(null=True, blank=True, verbose_name='Багет')
+    passe_partout = models.BooleanField(null=True, blank=True, verbose_name='Паспарту')
+    decor = models.CharField(max_length=255, blank=True, verbose_name='Оформление')
+    creation_year = models.IntegerField(default=0, blank=True, verbose_name='Год создания')
 
     class Meta:
-        verbose_name = _("product")
-        verbose_name_plural = _("products")
+        verbose_name = _("продукт")
+        verbose_name_plural = _("продукты")
 
     def __str__(self):
         return f'{self.title} ({self.price})'
@@ -63,8 +64,8 @@ class Customer(models.Model):
     name = models.CharField(max_length=200)
 
     class Meta:
-        verbose_name = _("customer")
-        verbose_name_plural = _("customers")
+        verbose_name = _("покупатель")
+        verbose_name_plural = _("покупатели")
 
     def __str__(self):
         return self.name
@@ -77,7 +78,7 @@ class CustomerInformation(models.Model):
     city = models.CharField(max_length=255, blank=False)
     street = models.CharField(max_length=255, blank=False)
     apartment = models.IntegerField(default=0, blank=False)
-    phone = models.DecimalField(max_digits=20, decimal_places=0, blank=False)
+    phone = models.TextField(max_length=255, blank=False)
     email = models.CharField(max_length=255, blank=False)
     password = models.CharField(max_length=255, blank=False)
     confirm_password = models.CharField(max_length=255, blank=False)
@@ -90,8 +91,8 @@ class Delivery(models.Model):
     pickup = models.DecimalField(max_digits=7, decimal_places=2)
 
     class Meta:
-        verbose_name = _("delivery")
-        verbose_name_plural = _("deliveries")
+        verbose_name = _("доставка")
+        verbose_name_plural = _("доставки")
 
     def __str__(self):
         return f'{self.russia_curier_price}, {self.nab_chelny_curier_price}, {self.pickup}'
@@ -116,8 +117,8 @@ class Order(models.Model):
     created_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = _("order")
-        verbose_name_plural = _("orders")
+        verbose_name = _("заказ")
+        verbose_name_plural = _("заказы")
 
     def __str__(self):
         return f'{self.id} - {self.customer} ({self.get_status_display()})'
@@ -141,8 +142,8 @@ class OrderItems(models.Model):
     created_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name = _("order item")
-        verbose_name_plural = _("order items")
+        verbose_name = _("предмет заказа")
+        verbose_name_plural = _("предметы заказа")
         unique_together = (('product', 'order'),)
 
     def __str__(self):

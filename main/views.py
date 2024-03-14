@@ -1,13 +1,18 @@
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 
+from main.models import Product
+
 
 def home(request: HttpRequest):
     return HttpResponse(render(request, 'home.html', {}))
 
 
 def paintings(request: HttpRequest):
-    return HttpResponse(render(request, 'paintings.html', {}))
+    products = Product.objects.all()
+    return HttpResponse(render(request, 'paintings.html', {
+        'products': products
+    }))
 
 
 def stuffed_toys(request: HttpRequest):
