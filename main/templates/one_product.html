@@ -2,8 +2,8 @@
 {% load static %}
 
 {% block head %}
-<title>Product</title>
-<link rel="stylesheet" href="{% static 'styles/product.css' %}">
+<title>One_product</title>
+<link rel="stylesheet" href="{% static 'styles/one_product.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -14,9 +14,8 @@
 </section>
 <section class="page-path container">
 	<ul>
-		<li class="home">Главная</li>
-		<li><a href="{% url 'paintings' %}">Товары</a></li>
-		<li>Картины</li>
+		<li class="home"><a href="{% url 'home' %}">Главная</a></li>
+		<li>{{ category.name }}</li>
 	</ul>
 </section>
 <div class="container products-list">

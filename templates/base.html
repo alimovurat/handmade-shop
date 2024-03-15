@@ -16,7 +16,7 @@
 			<div class="top-bar">
 				<div class="container top-right">
 					<ul class="top-bar-menu">
-						<li class="top-bar-menu-item home"><a class="top-bar-links" href="{% url 'paintings' %}">Главная</a>
+						<li class="top-bar-menu-item home"><a class="top-bar-links" href="{% url 'home' %}">Главная</a>
 						</li>
 						<li class="top-bar-menu-item"><a class="top-bar-links" href="{% url 'shopping_cart' %}">Корзина</a></li>
 						<li class="top-bar-menu-item"><a class="top-bar-links"
@@ -101,12 +101,12 @@
 								</div>
 								<div class="popup-menu">
 									<ul class="popup-menu-list">
-										<li class="catalogue-item"><a class="top-bar-links" href="{% url 'paintings' %}"><span
+										<li class="catalogue-item"><a class="top-bar-links" href="{% url 'products' category_id=2 %}"><span
 													class="transformed">Картины</span></a></li>
-										<li class="catalogue-item"><a class="top-bar-links" href="{% url 'stuffed_toys' %}"><span
+										<li class="catalogue-item"><a class="top-bar-links" href="{% url 'products' category_id=3 %}"><span
 													class="transformed">Мягкие игрушки</span></a>
 										</li>
-										<li class="catalogue-item"><a class="top-bar-links" href="{% url 'brooches' %}"><span
+										<li class="catalogue-item"><a class="top-bar-links" href="{% url 'products' category_id=4 %}"><span
 													class="transformed">Броши</span></a></li>
 									</ul>
 								</div>
