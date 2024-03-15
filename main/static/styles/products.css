@@ -8,7 +8,7 @@
 
 .page-title {
 	height: 260px;
-	background-image: url("../images/background-stuffed-toys-2.jpg");
+	background-image: url("../images/background.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	font-family: "frankinity";
@@ -18,8 +18,6 @@
 	margin: 0;
 	font-size: 80px;
 	padding-top: 35px;
-	color: black;
-	/* color: rgb(229, 73, 148); */
 }
 
 /* Путь к текущей странице */
@@ -56,10 +54,10 @@ main {
 }
 
 .main-left {
-	width: 300px;
+	flex-basis: 25%;
 }
 
-.products-list {
+.products {
 	align-items: start;
 	padding-left: 0;
 	padding-right: 0;
@@ -83,22 +81,26 @@ main {
 	right: 0px;
 }
 
-.aside-categories-list {
+
+.aside-technique-list {
 	padding-left: 10px;
+	display: flex;
+	flex-direction: column;
 }
 
-.aside-categories-list li {
-	list-style-type: none;
+.product-technique {
 	padding: 10px 0 10px 0;
 	border-bottom: 2px solid #e0e0e0;
 }
 
 .main-right {
-	width: 75%;
+	flex-basis: 75%;
+	flex-grow: 1;
 }
 
-.row {
+.products-list {
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .product-card {
@@ -118,39 +120,46 @@ main {
 	transform: scale(1.1);
 }
 
-.product-bottom ul {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+.title-size {
+	min-height: 79px;
+	margin-top: auto;
 }
 
 .product-title {
 	font-size: large;
 	font-weight: bold;
-	list-style-type: none;
 	padding: 5px;
 	padding-top: 10px;
 }
 
+.product-type-and-size {
+	padding: 5px;
+}
+
+.product-size {
+	padding: 2px 2px;
+	margin: 0;
+	font-size: smaller;
+}
+
 .product-price {
-	list-style-type: none;
+	padding-bottom: 5px;
 	color: indigo;
 	font-size: medium;
-	padding-top: 20px;
+	margin-top: auto;
 }
 
 .product-bottom {
-	height: 30%;
+	height: 35%;
 	background-color: white;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
+	display: flex;
+	flex-direction: column;
 }
 
 .product-top {
-	height: 70%;
+	height: 65%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -161,7 +170,6 @@ main {
 .product-top img {
 	max-width: 90%;
 	max-height: 90%;
-	cursor: pointer;
 }
 
 
@@ -182,6 +190,22 @@ main {
 	justify-content: right;
 }
 
+.step-links {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.prev-page,
+.next-page {
+	display: flex;
+	align-items: center;
+}
+
+.prev-page img {
+	margin-right: 10px;
+}
+
 .page-numbers {
 	width: 30px;
 	border: 2px solid #e0e0e0;
@@ -196,6 +220,7 @@ main {
 	color: white;
 	cursor: default;
 	border-color: indigo;
+	margin: 0;
 }
 
 .next-page {
