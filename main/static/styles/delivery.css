@@ -70,3 +70,39 @@
 	font-weight: 100;
 	margin-top: 10px;
 }
+
+@media screen and (max-width: 320px) {}
+
+@media screen and (min-width: 321px) and (max-width: 360px) {}
+
+@media screen and (min-width: 361px) and (max-width: 768px) {}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+	.section-title {
+		height: 250px;
+	}
+
+	.page-title {
+		height: 220px;
+	}
+
+	.page-title h1 {
+		font-size: 70px;
+		padding-top: 24px;
+	}
+
+	.pay-and-delivery p {
+		font-size: small;
+	}
+
+	.delivery-price {
+		font-size: large;
+	}
+
+	.delivery-price li {
+		font-size: small;
+	}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {}

@@ -3,6 +3,7 @@
 document.getElementById('openModalBtn').addEventListener('click', function () {
 	document.getElementById('registrationModal').style.display = 'block';
 	document.getElementById('registerForm').style.display = 'none';
+	document.getElementById('loginForm').style.display = 'block';
 });
 
 document.getElementsByClassName('close')[0].addEventListener('click', function () {
@@ -74,4 +75,16 @@ myInput.onkeyup = function () {
 		length.classList.remove("valid");
 		length.classList.add("invalid");
 	}
+}
+
+// Изменение цвета указателя текущей страницы
+
+if (window.location.href.includes("home")) {
+	document.getElementById("home-page").style.color = "violet";
+} else if (window.location.href.includes("shopping_cart")) {
+	document.getElementById("shopping-cart-page").style.color = "violet";
+} else if (window.location.href.includes("blog")) {
+	document.getElementById("blog-page").style.color = "violet";
+} else if (window.location.href.includes("login")) {
+	document.getElementById("openModalBtn").style.color = "violet";
 }

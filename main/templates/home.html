@@ -7,4 +7,68 @@
 {% endblock %}
 
 {% block content %}
+<section class="section-title">
+	<div class="container page-title">
+		<h1>Главная</h1>
+	</div>
+</section>
+<section class="page-path container">
+	<ul>
+		<li class="home"><a href="{% url 'home' %}">Главная</a></li>
+	</ul>
+</section>
+<div class="container products">
+	<div class="main-left">
+		<aside class="aside-search">
+			<h4>Поиск продукта</h4>
+			<form class="form-search-main" action="/search" method="get">
+				<input class="product-search search-input" type="text" name="search" placeholder="Поиск">
+				<button class="search-button">
+					<img src="{% static 'images/search.png' %}" alt="search" width="30" height="30">
+				</button>
+			</form>
+		</aside>
+	</div>
+	<div class="main-right">
+		<section class="products-list">
+			{% for product in products %}
+				<a href="{% url 'one_product' %}"><div class="product-card">
+					<div class="product-top">
+						<img src="{{ product.image.url }}" alt="product">
+					</div>
+					<div class="product-bottom">
+						<div class='title-size'>
+							<div class="product-title">{{ product.title }}</div>
+							<div class="product-size">{{ product.size }}</div>
+						</div>
+						<div class="product-price">
+							<span class="price-color">{{ product.price}} ₽</span>
+						</div>
+					</div>
+				</div></a>
+			{% endfor %}
+		</section>
+		<section class="products-page">
+			<div class="pagination">
+				<span class="step-links">
+					{% if products.has_previous %}
+					<div class="prev-page">
+						<a href="?page=1"><img src="{% static 'images/left.png' %}" alt="prev-page" width="15" height="15"></a>
+						<a class=page-numbers href="?page={{ products.previous_page_number }}">{{ products.previous_page_number }}</a>
+					</div>
+					{% endif %}
+					<span class="page-numbers current">
+						{{ products.number }}
+					</span>
+					{% if products.has_next %}
+					<div class="next-page">
+						<a class=page-numbers href="?page={{ products.next_page_number }}">{{ products.next_page_number }}</a>
+						<a href="?page={{ products.paginator.num_pages }}"><img src="{% static 'images/right.png' %}" alt="next-page" width="15" height="15"></a>
+					</div>
+					{% endif %}
+				</span>
+			</div>
+		</section>
+	</div>
+</div>
 {% endblock %}
