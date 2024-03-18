@@ -16,10 +16,10 @@
 			<div class="top-bar">
 				<div class="container top-right">
 					<ul class="top-bar-menu">
-						<li class="top-bar-menu-item home"><a class="top-bar-links" href="{% url 'home' %}">Главная</a>
+						<li class="top-bar-menu-item" id='home-page'><a class="top-bar-links" href="{% url 'home' %}">Главная</a>
 						</li>
-						<li class="top-bar-menu-item"><a class="top-bar-links" href="{% url 'shopping_cart' %}">Корзина</a></li>
-						<li class="top-bar-menu-item"><a class="top-bar-links"
+						<li class="top-bar-menu-item" id='shopping-cart-page'><a class="top-bar-links" href="{% url 'shopping_cart' %}">Корзина</a></li>
+						<li class="top-bar-menu-item" id='blog-page'><a class="top-bar-links"
 								href="https://themes.g5plus.net/handmade/home-01/" target="_blank">Блог</a></li>
 						<li class="top-bar-menu-item" id="openModalBtn"><span class='colored-login-button'>Войти</span></li>
 						<div id="registrationModal" class="modal">
@@ -63,25 +63,21 @@
 						<img src="{% static 'images/logo.png' %}" alt="logo">
 					</div>
 					<div class="search">
-						<div class="search-with-category">
-							<div class="form-search">
-								<form class="form-search-header" action="/search" , method="get">
-									<select name="categories">
-										<option value="categories">Категории</option>
-										<option value="paintings">Картины</option>
-										<option value="stuffed-toys">Мягкие игрушки</option>
-										<option value="brooches">Броши</option>
-									</select>
-									<input class='product-search' type="text" name="search" placeholder="Поиск">
-									<button class="search-button">
-										<img src="{% static 'images/search.png' %}" alt="search" , width="30" , height="30">
-									</button>
-								</form>
-							</div>
-						</div>
+						<form class="search-with-category" action="/search" , method="get">
+							<select name="categories">
+								<option value="categories">Категории</option>
+								<option value="paintings">Картины</option>
+								<option value="stuffed-toys">Мягкие игрушки</option>
+								<option value="brooches">Броши</option>
+							</select>
+							<input class='product-search' type="text" name="search" placeholder="Поиск">
+							<button class="search-button">
+								<img src="{% static 'images/search.png' %}" alt="search" , width="30" , height="30">
+							</button>
+						</form>
 						<div class="shopping-cart">
 							<div class="cart">
-								<a href="{% url 'shopping_cart' %}"><img src="{% static 'images/shopping-cart.png' %}" alt="cart" , width="30" , height="30"></a>
+								<a href="{% url 'shopping_cart' %}"><img src="{% static 'images/products-in-cart.png' %}" alt="cart" , width="25" , height="25"></a>
 							</div>
 							<div class="total-price">
 								<p>9500 ₽</p>
@@ -90,34 +86,32 @@
 					</div>
 				</div>
 			</div>
-			<nav>
-				<menu>
-					<div class="container navigation">
-						<ul class="main-menu">
-							<li class="menu-item catalogue">Каталог
-								<div class="hr-menu">
-									<hr class="hr-top">
-									<hr class="hr-bottom">
-								</div>
-								<div class="popup-menu">
-									<ul class="popup-menu-list">
-										<li class="catalogue-item"><a class="top-bar-links" href="{% url 'products' category_id=2 %}"><span
-													class="transformed">Картины</span></a></li>
-										<li class="catalogue-item"><a class="top-bar-links" href="{% url 'products' category_id=3 %}"><span
-													class="transformed">Мягкие игрушки</span></a>
-										</li>
-										<li class="catalogue-item"><a class="top-bar-links" href="{% url 'products' category_id=4 %}"><span
-													class="transformed">Броши</span></a></li>
-									</ul>
-								</div>
-							</li>
-							<li class="menu-item">Обо мне</li>
-							<li class="menu-item">Портфолио</li>
-							<li class="menu-item"><a class="top-bar-links" href="{% url 'delivery' %}">Оплата и доставка</a></li>
-							<li class="menu-item">Контакты</li>
-							<li class="menu-item">Новые посты</li>
+			<nav class='navigation'>
+				<menu class='container'>
+					<ul class="main-menu">
+						<li class="menu-item catalogue">Каталог
+							<div class="hr-menu">
+								<hr class="hr-top">
+								<hr class="hr-bottom">
+							</div>
+							<div class="popup-menu">
+								<ul class="popup-menu-list">
+									<li class="catalogue-item"><a class="top-bar-links" href="{% url 'products_by_category' category_id=2 %}"><span
+												class="transformed">Картины</span></a></li>
+									<li class="catalogue-item"><a class="top-bar-links" href="{% url 'products_by_category' category_id=3 %}"><span
+												class="transformed">Мягкие игрушки</span></a>
+									</li>
+									<li class="catalogue-item"><a class="top-bar-links" href="{% url 'products_by_category' category_id=4 %}"><span
+												class="transformed">Броши</span></a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="menu-item">Обо мне</li>
+						<li class="menu-item">Портфолио</li>
+						<li class="menu-item"><a class="top-bar-links" href="{% url 'delivery' %}">Оплата и доставка</a></li>
+						<li class="menu-item">Контакты</li>
+						<li class="menu-item">Новые посты</li>
 						</ul>
-					</div>
 				</menu>
 			</nav>	
 		</header>
@@ -126,9 +120,9 @@
 			{% endblock %}
 		</main>
 		<footer>
-			<div class="contacts">
+			<div class="container contacts">
 				<h2>Мои контакты</h2>
-				<div>
+				<div class='phone-email'>
 					<p>+79600852218</p>
 					<p>Florencia19@mail.ru</p>
 				</div>

@@ -64,23 +64,17 @@ main {
 }
 
 .form-search-main {
+	height: 44px;
 	font-size: large;
 	display: flex;
 	vertical-align: middle;
-	height: 54px;
 	position: relative;
 }
 
-.search-input[type="text"] {
-	width: 100%;
-	height: 50px;
+.search-input {
+	width: 80%;
+	min-width: 150px;
 }
-
-.search-button {
-	position: absolute;
-	right: 0px;
-}
-
 
 .aside-technique-list {
 	padding-left: 10px;
@@ -101,10 +95,11 @@ main {
 .products-list {
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-around;
 }
 
 .product-card {
-	width: 260px;
+	width: 250px;
 	height: 320px;
 	margin: 20px;
 	text-align: center;
@@ -226,4 +221,99 @@ main {
 .next-page {
 	margin-left: 10px;
 	cursor: pointer;
+}
+
+/* Масштабирование страницы */
+
+@media screen and (max-width: 320px) {}
+
+@media screen and (min-width: 321px) and (max-width: 360px) {}
+
+@media screen and (min-width: 361px) and (max-width: 768px) {}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+	.main-left {
+		min-width: 25%;
+	}
+
+	.main-right {
+		min-width: 72%;
+		max-width: 717px;
+	}
+
+	.section-title {
+		height: 250px;
+	}
+
+	.page-title {
+		height: 220px;
+	}
+
+	.page-title h1 {
+		font-size: 70px;
+		padding-top: 24px;
+	}
+
+	.product-card {
+		width: 160px;
+		height: 210px;
+		margin: 15px 10px;
+	}
+
+	.product-bottom {
+		height: 40%;
+		margin-top: 10px;
+	}
+
+	.product-top {
+		height: 60%;
+	}
+
+	.title-size {
+		min-height: 50px;
+	}
+
+	.product-title {
+		font-size: medium;
+		padding: 0;
+	}
+
+	.product-size {
+		display: none;
+	}
+
+	.product-price {
+		font-size: smaller;
+		font-weight: bold;
+		margin: 0;
+	}
+
+	.search-input {
+		min-width: 100px;
+	}
+
+	.page-numbers {
+		width: 20px;
+		height: 20px;
+		padding: 5px;
+	}
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1280px) {
+
+	.product-card {
+		width: 220px;
+		height: 300px;
+		margin: 20px 10px;
+	}
+
+	.product-bottom {
+		height: 40%;
+		margin-top: 10px;
+	}
+
+	.product-top {
+		height: 60%;
+	}
 }

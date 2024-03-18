@@ -9,10 +9,23 @@ def base(request: HttpRequest):
 
 
 def home(request: HttpRequest):
-    return HttpResponse(render(request, 'home.html', {}))
+    products = Product.objects.all()
+    paginator = Paginator(products, 9)
+    page = request.GET.get('page')
+
+    try:
+        products = paginator.page(page)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+
+    return HttpResponse(render(request, 'home.html', {
+        'products': products
+    }))
 
 
-def products(request: HttpRequest, category_id: int):
+def products_by_category(request: HttpRequest, category_id: int):
     category = Category.objects.get(id=category_id)
     products = Product.objects.filter(category=category)
     paginator = Paginator(products, 9)
@@ -29,6 +42,7 @@ def products(request: HttpRequest, category_id: int):
         products = paginator.page(1)
     except EmptyPage:
         products = paginator.page(paginator.num_pages)
+
     return HttpResponse(render(request, 'products.html', {
         'category': category,
         'products': products,
