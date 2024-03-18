@@ -50,6 +50,13 @@ def products_by_category(request: HttpRequest, category_id: int):
     }))
 
 
+# def products_by_technique(request: HttpRequest, techique: str):
+#     products = Product.objects.filter(technique=techique)
+
+#     return HttpResponse(render(request, 'products.html', {
+#         'products': products,
+#     }))
+
 # def technique(request: HttpRequest, technique):
 #     technique = Product.objects.get(technique=technique)
 #     products = Product.objects.filter(technique=technique)

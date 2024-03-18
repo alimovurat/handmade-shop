@@ -32,14 +32,14 @@ class Product(models.Model):
         Category,
         on_delete=models.SET_DEFAULT,
         default=Category.get_default_pk,
-        related_name='+', 
+        related_name='+',
         verbose_name='Категория'
     )
     image = models.ImageField(upload_to='product', null=True, verbose_name='Изображение')
     title = models.CharField(max_length=255, blank=False, verbose_name='Название')
     description = models.TextField(blank=True, verbose_name='Описание')
     price = models.IntegerField(blank=False, verbose_name='Цена')
-    discount_price = models.IntegerField(blank=True, verbose_name='Цена со скидкой')
+    discount_price = models.IntegerField(blank=True, default=0, verbose_name='Цена со скидкой')
     count = models.IntegerField(default=1, verbose_name='Количество')
     genre = models.CharField(max_length=255, blank=True, verbose_name='Жанр')
     technique = models.CharField(max_length=255, blank=False, verbose_name='Техника')
@@ -50,6 +50,13 @@ class Product(models.Model):
     passe_partout = models.BooleanField(null=True, blank=True, verbose_name='Паспарту')
     decor = models.CharField(max_length=255, blank=True, verbose_name='Оформление')
     creation_year = models.IntegerField(default=0, blank=True, verbose_name='Год создания')
+    is_active = models.BooleanField(default=True, verbose_name='Активный')
+    created_at = models.DateTimeField(
+        auto_now_add=True, verbose_name='Дата создания'
+    )
+    updated_at = models.DateTimeField(
+        auto_now=True, verbose_name='Дата обновления'
+    )
 
     class Meta:
         verbose_name = _("продукт")

@@ -29,14 +29,16 @@
 				</button>
 			</form>
 		</aside>
-		<aside class="aside-technique">
-			<h4>Категории</h4>
-			<div class="aside-technique-list">
-				{% for technique in techniques %}
-					<span class="product-technique transformed">{{ technique }}</span>
-				{% endfor %}
-			</div>
-		</aside>
+		{% if category.name == 'Картины' %}
+			<aside class="aside-technique">
+				<h4>Категории</h4>
+				<div class="aside-technique-list">
+					{% for technique in techniques %}
+						<span class="product-technique transformed">{{ technique }}</span>
+					{% endfor %}
+				</div>
+			</aside>
+		{% endif %}
 	</div>
 	<div class="main-right">
 		<section class="products-list">
