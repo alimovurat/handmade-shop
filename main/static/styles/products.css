@@ -98,8 +98,11 @@ main {
 	padding: 0 15px;
 }
 
+.card-size {
+	width: 33%;
+}
+
 .product-card {
-	width: 250px;
 	height: 320px;
 	margin: 20px;
 	text-align: center;
@@ -259,14 +262,11 @@ main {
 	}
 
 	.product-card {
-		width: 208px;
-		height: 260px;
-		margin: 15px 10px;
+		height: 220px;
 	}
 
 	.product-bottom {
-		height: 40%;
-		margin-top: 10px;
+		padding-top: 10px;
 	}
 
 	.product-top {
