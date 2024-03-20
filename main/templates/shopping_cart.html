@@ -14,7 +14,7 @@
 </section>
 <section class="page-path container">
 	<ul>
-		<li class="home"><a href="{% url 'home' %}">Главная</a></li>
+		<li class="home colored"><a href="{% url 'home' %}">Главная</a></li>
 		<li>Корзина</li>
 	</ul>
 </section>
@@ -41,9 +41,9 @@
 						<li><b>Размер:</b> 80х55 см,</li>
 						<li><b>Материал:</b> Холст,</li>
 						<li><b>Наличие подрамника:</b> Есть,</li>
-						<li><b>Наличие багета:</b> Нет,</li>
 					</ul>
 					<ul>
+						<li><b>Наличие багета:</b> Нет,</li>
 						<li><b>Оформление:</b> Нет,</li>
 						<li><b>Наличие паспарту:</b> Нет</li>
 					</ul>
@@ -66,9 +66,9 @@
 						<li><b>Размер:</b> 44х54 см,</li>
 						<li><b>Материал:</b> Холст,</li>
 						<li><b>Наличие подрамника:</b> Нет,</li>
-						<li><b>Наличие багета:</b> Есть,</li>
 					</ul>
 					<ul>
+						<li><b>Наличие багета:</b> Есть,</li>
 						<li><b>Оформление:</b> Плёнка,</li>
 						<li><b>Наличие паспарту:</b> Нет</li>
 					</ul>
@@ -105,7 +105,7 @@
 			<div class='form-row'>
 				<div class='first-name form'>
 					<label for="first-name">ИМЯ <span class="required">*</span></label>
-					<input class='registration-input' type="text" name="first-name" id="first-name" required>
+					<input class='registration-input' type="text" name="first-name" id="first-name" required autocomplete='first-name'>
 				</div>
 				<div class='last-name form'>
 					<label for="last-name">ФАМИЛИЯ <span class="required">*</span></label>
@@ -132,14 +132,14 @@
 			</div>
 			<div class='form-row'>
 				<div class='phone form'>
-					<label for="phone">ТЕЛЕФОН <span class="required">*</span></label>
-					<input class='registration-input' type="text" name="phone" id="phone" required>
+					<label for="reg-phone">ТЕЛЕФОН <span class="required">*</span></label>
+					<input class='registration-input' type="tel" name="phone" id="reg-phone" required autocomplete="tel">
 				</div>
 			</div>
 			<div class='form-row'>
 				<div class='email form'>
-					<label for="email">EMAIL <span class="required">*</span></label>
-					<input class='registration-input' type="text" name="email" id="email" required>
+					<label for="reg-email">EMAIL <span class="required">*</span></label>
+					<input class='registration-input' type="email" name="email" id="reg-email" required autocomplete="email">
 				</div>
 			</div>
 			<div class='create-account-form'>
@@ -172,27 +172,27 @@
 			<div class='delivery-method'>
 				<h4>СПОСОБ ДОСТАВКИ</h4>
 				<div class='express-delivery checkbox-row'>
-					<input type="radio" name='delivery-choice'>
-					<label for="delivery-choice">Курьером до двери или в ПВЗ по всей России - 500 руб.</label>
+					<input type="radio" id="delivery-choice-Russia" name='delivery-choice-Russia'>
+					<label for="delivery-choice-Russia">Курьером до двери или в ПВЗ по всей России - 500 руб.</label>
 				</div>
 				<div class='express-delivery checkbox-row'>
-					<input type="radio" name='delivery-choice'>
-					<label for="delivery-choice">Курьером до двери по г. Набережные Челны - 300 руб.</label>
+					<input type="radio" id="delivery-choice-NabChelny" name='delivery-choice-NabChelny'>
+					<label for="delivery-choice-NabChelny">Курьером до двери по г. Набережные Челны - 300 руб.</label>
 				</div>
 				<div class='pickup checkbox-row'>
-					<input type="radio" name='delivery-choice'>
-					<label for="delivery-choice">Самовывоз: г. Набережные Челны - бесплатно.</label>
+					<input type="radio" id="delivery-choice-pickup" name='delivery-choice-pickup'>
+					<label for="delivery-choice-pickup">Самовывоз: г. Набережные Челны - бесплатно.</label>
 				</div>
 			</div>
 			<div class='payment-method'>
 				<h4>СПОСОБ ОПЛАТЫ</h4>
 				<div class='cash-payment checkbox-row'>
-					<input type="radio" name='payment'>
-					<label for="payment">Оплата наличными при получении.</label>
+					<input type="radio" id="payment-cash" name='payment-cash'>
+					<label for="payment-cash">Оплата наличными при получении.</label>
 				</div>
 				<div class='card-payment checkbox-row'>
-					<input type="radio" name='payment'>
-					<label for="payment">Оплата онлайн банковской картой.</label>
+					<input type="radio" id="payment-card" name='payment-card'>
+					<label for="payment-card">Оплата онлайн банковской картой.</label>
 				</div>
 			</div>
 			<div class='order-comment'>

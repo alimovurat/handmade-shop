@@ -14,57 +14,37 @@
 </section>
 <section class="page-path container">
 	<ul>
-		<li class="home"><a href="{% url 'home' %}">Главная</a></li>
-		<li>{{ category.name }}</li>
+		<li class="home colored"><a href="{% url 'home' %}">Главная</a></li>
+		<li>{{ product.category }}</li>
 	</ul>
 </section>
-<div class="container products-list">
-	<div class="main-left">
-		<aside class="aside-search">
-			<h4>Поиск продукта</h4>
-			<form class="form-search-main" action="/search" method="get">
-				<input class="product-search search-input" type="text" name="search" placeholder="Поиск">
-				<button class="search-button">
-					<img src="{% static 'images/search.png' %}" alt="search" width="30" height="30">
-				</button>
-			</form>
-		</aside>
-		<aside class="aside-categories">
-			<h4>Категории</h4>
-			<ul class="aside-categories-list">
-				<li><span class="transformed">Акварель</span></li>
-				<li><span class="transformed">Акрил</span></li>
-				<li><span class="transformed">Батик</span></li>
-				<li><span class="transformed">Вышивка</span></li>
-				<li><span class="transformed">Гуашь</span></li>
-				<li><span class="transformed">Керамопласт</span></li>
-				<li><span class="transformed">Масло</span></li>
-				<li><span class="transformed">Мозаика</span></li>
+<div class="container product-detail">
+	<section class="product-card-detail">
+		<div class="left-side {% if product.category.name == 'Картины' %} paintings {% endif %}">
+			<img src="{{ product.image.url }}" alt="painting">
+		</div>
+		<div class="right-side">
+			<ul class="product-info">
+				<li class="product title">{{ product.title }}</li>
+				<li class="product price">{{ product.price }} ₽</li>
+				{% if product.category.name == 'Картины' %}
+				<li class="product genre"><b>Жанр:</b> {{ product.genre }}</li>
+				{% endif %}
+				{% if product.category.name == 'Картины' or product.category.name == 'Мягкие игрушки' %}
+				<li class="product technique"><b>Техника:</b> {{ product.technique }}</li>
+				{% endif %}
+				<li class="product size"><b>Размер:</b> {{ product.size }}</li>
+				<li class="product material"><b>Материал:</b> {{ product.material }}</li>
+				{% if product.category.name == 'Картины' %}
+				<li class="product frame"><b>Наличие подрамника:</b> {{ product.display_frame }}</li>
+				<li class="product baguette"><b>Наличие багета:</b> {{ product.display_baguette }}</li>
+				<li class="product passe-partout"><b>Наличие паспарту:</b> {{ product.display_passe_partout }}</li>
+				<li class="product decor"><b>Оформление:</b> {{ product.decor }}</li>
+				{% endif %}
+				<li class="product creation-year"><b>Год создания:</b> {{ product.creation_year }}</li>
+				<button class="gradient-button add-to-cart-button" type='submit' name='add_to_cart'>КУПИТЬ</button>
 			</ul>
-		</aside>
-	</div>
-	<div class="main-right">
-		<section class="product">
-			<div class="left-side">
-				<img src="/media/product/6.jpg" alt="painting">
-			</div>
-			<div class="right-side">
-				<ul class="paintings-info">
-					<li class="paintings title">Журавли</li>
-					<li class="paintings price">6000 ₽</li>
-					<li class="paintings genre"><b>Жанр:</b> Пейзаж</li>
-					<li class="paintings technique"><b>Техника:</b> Масло</li>
-					<li class="paintings size"><b>Размер:</b> 80х55 см</li>
-					<li class="paintings material"><b>Материал:</b> Холст</li>
-					<li class="paintings frame"><b>Наличие подрамника:</b> Есть</li>
-					<li class="paintings baguette"><b>Наличие багета:</b> Нет</li>
-					<li class="paintings passe-partout"><b>Наличие паспарту:</b> Нет</li>
-					<li class="paintings decor"><b>Оформление:</b> Нет</li>
-					<li class="paintings creation-year"><b>Год написания:</b> 2013</li>
-					<button class="gradient-button add-to-cart-button" type='submit' name='add_to_cart'>КУПИТЬ</button>
-				</ul>
-			</div>
-		</section>
-	</div>
+		</div>
+	</section>
 {% endblock %}
 
