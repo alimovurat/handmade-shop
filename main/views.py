@@ -50,31 +50,30 @@ def products_by_category(request: HttpRequest, category_id: int):
     }))
 
 
-# def products_by_technique(request: HttpRequest, techique: str):
-#     products = Product.objects.filter(technique=techique)
+def products_by_technique(request: HttpRequest, technique: str):
+    products = Product.objects.filter(technique=technique)
+    category = products.first().category
+    paginator = Paginator(products, 9)
+    page = request.GET.get('page')
 
-#     return HttpResponse(render(request, 'products.html', {
-#         'products': products,
-#     }))
-
-# def technique(request: HttpRequest, technique):
-#     technique = Product.objects.get(technique=technique)
-#     products = Product.objects.filter(technique=technique)
-#     return HttpResponse(render(request, 'products.html', {
-#         'products': products,
-#         'technique': technique
-#     }))
-
-
-# def products(request: HttpRequest):
-#     products = Product.objects.all()
-#     return HttpResponse(render(request, 'products.html', {
-#         'products': products
-#     }))
+    try:
+        products = paginator.page(page)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+    return HttpResponse(render(request, 'products.html', {
+        'products': products,
+        'technique': technique,
+        'category': category
+    }))
 
 
-def one_product(request: HttpRequest):
-    return HttpResponse(render(request, 'one_product.html', {}))
+def one_product(request: HttpRequest, product_id: int):
+    product = Product.objects.get(id=product_id)
+    return HttpResponse(render(request, 'one_product.html', {
+        'product': product
+    }))
 
 
 def shopping_cart(request: HttpRequest):

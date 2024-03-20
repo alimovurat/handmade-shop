@@ -61,7 +61,8 @@ a {
 	margin: 0 10px 0 10px;
 	cursor: pointer;
 	padding-left: 15px;
-	font-weight: bold;
+	font-weight: 200;
+	color: rgb(102, 102, 102);
 }
 
 #home-page {
@@ -382,7 +383,6 @@ menu {
 	border-bottom: 2px solid violet;
 }
 
-
 .popup-menu {
 	width: 180px;
 	position: absolute;
@@ -419,6 +419,16 @@ menu {
 	color: violet;
 	cursor: pointer;
 	padding-left: 20px;
+}
+
+/* Общие стили для всех страниц */
+
+.colored {
+	color: violet;
+}
+
+.paintings img {
+	box-shadow: 8px 5px 5px #999999;
 }
 
 /* Футер */
@@ -578,7 +588,7 @@ footer {
 
 	.menu-item {
 		margin: 0 10px;
-		font-size: smaller;
+		font-size: 15px;
 	}
 
 	.popup-menu {
@@ -604,27 +614,27 @@ footer {
 		padding-bottom: 20px;
 	}
 
-	.contacts h2 {
+	/* .contacts h2 {
 		font-size: large;
-	}
+	} */
 
-	.phone-email p {
+	/* .phone-email p {
 		font-size: small;
-	}
+	} */
 
 	.links {
 		margin-top: 10px;
 	}
 
-	.links img {
+	/* .links img {
 		width: 30px;
 		height: 30px;
-	}
+	} */
 
-	.top-bar-menu-item {
+	/* .top-bar-menu-item {
 		font-size: smaller;
-		font-weight: bold;
-	}
+		font-weight: 200;
+	} */
 
 	.modal-content {
 		width: 400px;

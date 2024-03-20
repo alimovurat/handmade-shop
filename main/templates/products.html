@@ -14,8 +14,13 @@
 </section>
 <section class="page-path container">
 	<ul>
-		<li class="home"><a href="{% url 'home' %}">Главная</a></li>
-		<li>{{ category.name }}</li>
+		<li class="home colored"><a href="{% url 'home' %}">Главная</a></li>
+		{% if technique %}
+			<li><a class = 'colored' href="{% url 'products_by_category' category_id=2 %}">{{ category.name }}</a></li>
+			<li>{{ technique }}</li>
+		{% else %}
+			<li>{{ category.name }}</li>
+		{% endif %}
 	</ul>
 </section>
 <div class="container products">
@@ -29,12 +34,12 @@
 				</button>
 			</form>
 		</aside>
-		{% if category.name == 'Картины' %}
+		{% if category.name == 'Картины' and not technique %}
 			<aside class="aside-technique">
 				<h4>Категории</h4>
 				<div class="aside-technique-list">
 					{% for technique in techniques %}
-						<span class="product-technique transformed">{{ technique }}</span>
+						<span class="product-technique transformed"><a href="{% url 'products_by_technique' technique=technique %}">{{ technique }}</a></span>
 					{% endfor %}
 				</div>
 			</aside>
@@ -43,8 +48,8 @@
 	<div class="main-right">
 		<section class="products-list">
 			{% for product in products %}
-				<a href="{% url 'one_product' %}"><div class="product-card">
-					<div class="product-top">
+				<a href="{% url 'one_product' product_id=product.id %}"><div class="product-card">
+					<div class="product-top {% if product.category.name == 'Картины' %} paintings {% endif %}">
 						<img src="{{ product.image.url }}" alt="product">
 					</div>
 					<div class="product-bottom">

@@ -58,6 +58,15 @@ class Product(models.Model):
         auto_now=True, verbose_name='Дата обновления'
     )
 
+    def display_frame(self):
+        return "Да" if self.frame else "Нет"
+
+    def display_baguette(self):
+        return "Да" if self.baguette else "Нет"
+
+    def display_passe_partout(self):
+        return "Да" if self.passe_partout else "Нет"
+
     class Meta:
         verbose_name = _("продукт")
         verbose_name_plural = _("продукты")

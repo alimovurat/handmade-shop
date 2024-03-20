@@ -53,56 +53,14 @@ main {
 	padding-bottom: 40px;
 }
 
-.main-left {
-	width: 300px;
-}
-
-.products-list {
-	align-items: start;
-	padding-left: 0;
-	padding-right: 0;
-}
-
-.form-search-main {
-	font-size: large;
-	display: flex;
-	vertical-align: middle;
-	height: 54px;
-	position: relative;
-}
-
-.search-input[type="text"] {
-	width: 100%;
-	height: 50px;
-}
-
-.search-button {
-	position: absolute;
-	right: 0px;
-}
-
-.aside-categories-list {
-	padding-left: 10px;
-}
-
-.aside-categories-list li {
-	list-style-type: none;
-	padding: 10px 0 10px 0;
-	border-bottom: 2px solid #e0e0e0;
-}
-
-.main-right {
-	width: 75%;
-	position: relative;
-}
-
 .section-title-hr {
 	width: 1200px;
 	margin-top: 0;
 	margin-bottom: 0;
 }
 
-.product {
+.product-card-detail {
+	width: 100%;
 	height: 450px;
 	margin: 25px;
 	display: flex;
@@ -123,8 +81,6 @@ main {
 .left-side img {
 	max-width: 90%;
 	max-height: 90%;
-	border-radius: 10px;
-	box-shadow: 5px 3px 5px #999999;
 }
 
 .product .right-side {
@@ -133,7 +89,6 @@ main {
 }
 
 .right-side {
-	position: relative;
 	width: 40%;
 	height: 450px;
 	text-align: left;
@@ -141,15 +96,15 @@ main {
 	margin-left: 30px;
 }
 
-.paintings-info li {
+.product-info li {
 	list-style-type: none;
 }
 
-.paintings-info {
+.product-info {
 	padding: 0;
 }
 
-.paintings {
+.product {
 	font-size: large;
 }
 
@@ -177,4 +132,43 @@ main {
 	font-size: large;
 	color: red;
 	border: none;
+}
+
+/* Масштабирование страницы */
+
+@media screen and (max-width: 320px) {}
+
+@media screen and (min-width: 321px) and (max-width: 360px) {}
+
+@media screen and (min-width: 361px) and (max-width: 768px) {}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+	.product-card-detail {
+		height: 350px;
+	}
+
+	.right-side {
+		height: 350px;
+	}
+
+	.product {
+		font-size: medium;
+	}
+
+	.title {
+		font-size: 30px;
+	}
+
+	.price {
+		font-size: 20px;
+		padding: 10px 0;
+	}
+
+	.add-to-cart-button {
+		margin-top: 10px;
+		width: 150px;
+		height: 40px;
+		font-size: medium;
+	}
 }
