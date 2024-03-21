@@ -421,6 +421,63 @@ menu {
 	padding-left: 20px;
 }
 
+/* Раздел с титульниками */
+
+.section-title {
+	height: 300px;
+	display: flex;
+	align-items: center;
+}
+
+.page-title {
+	height: 260px;
+	background-image: url("../images/background.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	font-family: "frankinity";
+}
+
+.stuffed_toys-background {
+	background-image: url("../images/background-stuffed-toys.jpg");
+}
+
+.brooches-background {
+	background-image: url("../images/background-brooches.jpg");
+}
+
+.page-title h1 {
+	margin: 0;
+	font-size: 80px;
+	padding-top: 35px;
+}
+
+/* Путь к текущей странице */
+
+.page-path {
+	display: block;
+	border-bottom: 2px solid violet;
+	font-size: 14px;
+	padding-bottom: 20px;
+}
+
+.page-path ul {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	align-items: center;
+}
+
+.page-path li {
+	padding-right: 25px;
+	list-style-type: '>';
+	padding-left: 10px;
+}
+
+.page-path .home {
+	list-style-type: none;
+	padding-left: 0;
+}
+
 /* Общие стили для всех страниц */
 
 .colored {
@@ -429,6 +486,10 @@ menu {
 
 .paintings img {
 	box-shadow: 8px 5px 5px #999999;
+}
+
+.product-card_disabled {
+	opacity: 0.5;
 }
 
 /* Футер */
@@ -592,8 +653,8 @@ footer {
 	}
 
 	.popup-menu {
-		width: 150px;
-		bottom: -173px;
+		width: 160px;
+		bottom: -180px;
 	}
 
 	.hr-menu {
@@ -614,27 +675,9 @@ footer {
 		padding-bottom: 20px;
 	}
 
-	/* .contacts h2 {
-		font-size: large;
-	} */
-
-	/* .phone-email p {
-		font-size: small;
-	} */
-
 	.links {
 		margin-top: 10px;
 	}
-
-	/* .links img {
-		width: 30px;
-		height: 30px;
-	} */
-
-	/* .top-bar-menu-item {
-		font-size: smaller;
-		font-weight: 200;
-	} */
 
 	.modal-content {
 		width: 400px;
@@ -662,6 +705,19 @@ footer {
 	.reg-button {
 		width: 180px;
 		font-size: medium;
+	}
+
+	.section-title {
+		height: 250px;
+	}
+
+	.page-title {
+		height: 220px;
+	}
+
+	.page-title h1 {
+		font-size: 70px;
+		padding-top: 24px;
 	}
 }
 

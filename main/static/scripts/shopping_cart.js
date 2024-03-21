@@ -59,3 +59,17 @@ myRegInput.onkeyup = function () {
 		regLength.classList.add("invalid");
 	}
 }
+
+// Форма удаления товара из корзины
+
+document.addEventListener('DOMContentLoaded', function () {
+	var deleteIcons = document.querySelectorAll('.remove-product-button');
+
+	deleteIcons.forEach(function (icon) {
+		icon.addEventListener('click', function () {
+			var productId = icon.getAttribute('data-product-id');
+			var form = document.getElementById('delete-form-' + productId);
+			form.submit();
+		});
+	});
+});

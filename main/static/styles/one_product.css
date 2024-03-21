@@ -1,52 +1,3 @@
-/* Раздел с титульниками */
-
-.section-title {
-	height: 300px;
-	display: flex;
-	align-items: center;
-}
-
-.page-title {
-	height: 260px;
-	background-image: url("../images/background.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-	font-family: "frankinity";
-}
-
-.page-title h1 {
-	margin: 0;
-	font-size: 80px;
-	padding-top: 35px;
-}
-
-/* Путь к текущей странице */
-
-.page-path {
-	display: block;
-	border-bottom: 2px solid violet;
-	font-size: 14px;
-	padding-bottom: 20px;
-}
-
-.page-path ul {
-	padding: 0;
-	margin: 0;
-	display: flex;
-	align-items: center;
-}
-
-.page-path li {
-	padding-right: 25px;
-	list-style-type: '>';
-	padding-left: 10px;
-}
-
-.page-path .home {
-	list-style-type: none;
-	padding-left: 0;
-}
-
 /* main */
 
 main {
@@ -61,7 +12,7 @@ main {
 
 .product-card-detail {
 	width: 100%;
-	height: 450px;
+	height: 550px;
 	margin: 25px;
 	display: flex;
 	align-items: center;
@@ -81,6 +32,7 @@ main {
 .left-side img {
 	max-width: 90%;
 	max-height: 90%;
+	margin: 30px 20px;
 }
 
 .product .right-side {
@@ -90,7 +42,6 @@ main {
 
 .right-side {
 	width: 40%;
-	height: 450px;
 	text-align: left;
 	background-color: white;
 	margin-left: 30px;
@@ -132,6 +83,11 @@ main {
 	font-size: large;
 	color: red;
 	border: none;
+}
+
+.add-to-cart-button[disabled]:hover {
+	background-color: transparent;
+	cursor: not-allowed;
 }
 
 /* Масштабирование страницы */
