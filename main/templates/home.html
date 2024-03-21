@@ -14,7 +14,7 @@
 </section>
 <section class="page-path container">
 	<ul>
-		<li class="home"><a href="{% url 'home' %}">Главная</a></li>
+		<li class="home">Главная</li>
 	</ul>
 </section>
 <div class="container products">
@@ -32,7 +32,7 @@
 	<div class="main-right">
 		<section class="products-list">
 			{% for product in products %}
-				<a class='card-size' href="{% url 'one_product' product_id=product.id %}"><div class="product-card">
+				<a class='card-size' href="{% url 'one_product' product_id=product.id %}"><div class="product-card {% if product.count < 1 %}product-card_disabled{% endif %}">
 					<div class="product-top {% if product.category.name == 'Картины' %} paintings {% endif %}">
 						<img src="{{ product.image.url }}" alt="product">
 					</div>
@@ -42,7 +42,9 @@
 							<div class="product-size">{{ product.size }}</div>
 						</div>
 						<div class="product-price">
-							<span class="price-color">{{ product.price}} ₽</span>
+							{% if product.price %}
+								<span class="price-color">{{ product.price}} ₽</span>
+							{% endif %}
 						</div>
 					</div>
 				</div></a>

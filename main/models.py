@@ -102,16 +102,15 @@ class CustomerInformation(models.Model):
 
 class Delivery(models.Model):
 
-    russia_curier_price = models.DecimalField(max_digits=7, decimal_places=2)
-    nab_chelny_curier_price = models.DecimalField(max_digits=7, decimal_places=2)
-    pickup = models.DecimalField(max_digits=7, decimal_places=2)
+    name = models.CharField(max_length=255, null=True, blank=False, verbose_name='Название')
+    price = models.IntegerField(blank=False, null=True, verbose_name='Стоимость доставки')
 
     class Meta:
         verbose_name = _("доставка")
         verbose_name_plural = _("доставки")
 
     def __str__(self):
-        return f'{self.russia_curier_price}, {self.nab_chelny_curier_price}, {self.pickup}'
+        return f'{self.name}'
 
 
 class Order(models.Model):

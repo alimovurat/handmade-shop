@@ -18,6 +18,7 @@
 		<li>Корзина</li>
 	</ul>
 </section>
+{% if items %}
 <section class='section-main'>
 	<div class='container products-in-cart'>
 		<div class='top'>
@@ -25,74 +26,60 @@
 				<img src="{% static '/images/products-in-cart.png' %}" alt="products-in-cart" widht=30px height= 30px>
 			</div>
 			<div>
-				<h3>Товаров в корзине (2)</h3>
+				<h3>Товаров в корзине ({{ items|length }})</h3>
 			</div>
-			<button class='gradient-button empty-cart-button'>ОЧИСТИТЬ КОРЗИНУ</button>
+			<form class= 'empty-cart-form' action="{% url 'clear_shopping_cart' %}" method="POST">
+				{% csrf_token %}
+				<button class='gradient-button empty-cart-button'>ОЧИСТИТЬ КОРЗИНУ</button>
+			</form>
 		</div>
+		{% for item in items %}
 		<div class='center'>
-			<div class='center-left'>
-				<img src="{% static 'categories/paintings/Масло/6.jpg' %}" alt="painting">
+			<div class='center-left {% if item.product.category.name == "Картины" %} paintings {% endif %}'>
+				<img src="{{ item.product.image.url }}" alt="painting">
 			</div>
 			<div class='center-right'>
-				<div class='product-title'>Журавли</div>
+				<div class='product-title'>{{ item.product.title }}</div>
 				<div class='product-info'>
 					<ul>
-						<li><b>Категория:</b> Картина,</li>
-						<li><b>Размер:</b> 80х55 см,</li>
-						<li><b>Материал:</b> Холст,</li>
-						<li><b>Наличие подрамника:</b> Есть,</li>
+						<li><b>Категория:</b> {{ item.product.category.name }},</li>
+						<li><b>Размер:</b> {{ item.product.size }},</li>
+						<li><b>Материал:</b> {{ item.product.material }}</li>
 					</ul>
+					{% if item.product.category.name == "Картины" %}
 					<ul>
-						<li><b>Наличие багета:</b> Нет,</li>
-						<li><b>Оформление:</b> Нет,</li>
-						<li><b>Наличие паспарту:</b> Нет</li>
+						<li><b>Наличие подрамника:</b> {{ item.product.display_frame }},</li>
+						<li><b>Наличие багета:</b> {{ item.product.display_baguette }},</li>
+						<li><b>Наличие паспарту:</b> {{ item.product.display_passe_partout }},</li>
+						<li><b>Оформление:</b> {{ item.product.decor }}</li>
 					</ul>
+					{% endif %}
 				</div>
 				<div class='product-price'>
-					<div class='price'><b>Цена:</b> 6000 ₽</div>
+					<div class='price'><b>Цена:</b> {{ item.product.price }} ₽</div>
+					{% comment %} <div class='quantity'><b>Количество:</b> {{ item.quantity }} шт.</div> {% endcomment %}
 				</div>
 			</div>
-			<img class='remove-product-button' src="{% static '/images/remove-3.png' %}" alt="remove" width=30px height=30px>
+			<form action="{% url 'delete_from_shopping_cart' product_id=item.product.id %}" method='post' id="delete-form-{{ item.product.id }}">
+				{% csrf_token %}
+			</form>
+			<img class='remove-product-button' src="{% static '/images/remove-3.png' %}" data-product-id="{{ item.product.id }}" alt="remove" width=30px height=30px>
 		</div>
-		<div class='center'>
-			<div class='center-left'>
-				<img src="{% static 'categories/paintings/акварель/4.jpg' %}" alt="painting">
-			</div>
-			<div class='center-right'>
-				<div class='product-title'>Кот</div>
-				<div class='product-info'>
-					<ul>
-						<li><b>Категория:</b> Картина,</li>
-						<li><b>Размер:</b> 44х54 см,</li>
-						<li><b>Материал:</b> Холст,</li>
-						<li><b>Наличие подрамника:</b> Нет,</li>
-					</ul>
-					<ul>
-						<li><b>Наличие багета:</b> Есть,</li>
-						<li><b>Оформление:</b> Плёнка,</li>
-						<li><b>Наличие паспарту:</b> Нет</li>
-					</ul>
-				</div>
-				<div class='product-price'>
-					<div class='price'><b>Цена:</b> 3000 ₽</div>
-				</div>
-			</div>
-			<img class='remove-product-button' src="{% static '/images/remove-3.png' %}" alt="remove" width=30px height=30px>
-		</div>
+		{% endfor %}
 		<div class='bottom'>
 			<a href="{% url 'home' %}"><button class='gradient-button back-button'>НАЗАД К ПОКУПКАМ</button></a>
 			<div class='total-price in-cart'>
 				<div class='total'>
 					<p><span class='grey'>Итого</span></p>
-					<p><b>9000 ₽</b></p>
+					<p><b>{{ total_price }} ₽</b></p>
 				</div>
 				<div class='delivery'>
 					<p><span class='grey'>Доставка</span></p>
-					<p><b>500 ₽</b></p>
+					<p><b>{{ deliveries.0.price }} ₽</b></p>
 				</div>
 				<div class='to-pay'>
 					<p><span class='grey'>К оплате</span></p>
-					<p><b>9500 ₽</b></p>
+					<p><b>{{ total_price|add:deliveries.0.price }} ₽</b></p>
 				</div>
 			</div>
 		</div>
@@ -171,27 +158,29 @@
 		<div class='delivery-form'>
 			<div class='delivery-method'>
 				<h4>СПОСОБ ДОСТАВКИ</h4>
+				{% for delivery in deliveries %}
 				<div class='express-delivery checkbox-row'>
-					<input type="radio" id="delivery-choice-Russia" name='delivery-choice-Russia'>
-					<label for="delivery-choice-Russia">Курьером до двери или в ПВЗ по всей России - 500 руб.</label>
+					<input type="radio" id="delivery-choice-{{ delivery.id }}" name='delivery-choice' {% if forloop.first %} checked {% endif %}>
+					<label for="delivery-choice-{{ delivery.id }}">{{ delivery.name }} - {{ delivery.price }} руб.</label>
 				</div>
-				<div class='express-delivery checkbox-row'>
-					<input type="radio" id="delivery-choice-NabChelny" name='delivery-choice-NabChelny'>
+				{% comment %} <div class='express-delivery checkbox-row'>
+					<input type="radio" id="delivery-choice-NabChelny" name='delivery-choice'>
 					<label for="delivery-choice-NabChelny">Курьером до двери по г. Набережные Челны - 300 руб.</label>
 				</div>
 				<div class='pickup checkbox-row'>
-					<input type="radio" id="delivery-choice-pickup" name='delivery-choice-pickup'>
+					<input type="radio" id="delivery-choice-pickup" name='delivery-choice'>
 					<label for="delivery-choice-pickup">Самовывоз: г. Набережные Челны - бесплатно.</label>
-				</div>
+				</div> {% endcomment %}
+				{% endfor %}
 			</div>
 			<div class='payment-method'>
 				<h4>СПОСОБ ОПЛАТЫ</h4>
 				<div class='cash-payment checkbox-row'>
-					<input type="radio" id="payment-cash" name='payment-cash'>
+					<input type="radio" id="payment-cash" name='payment'>
 					<label for="payment-cash">Оплата наличными при получении.</label>
 				</div>
 				<div class='card-payment checkbox-row'>
-					<input type="radio" id="payment-card" name='payment-card'>
+					<input type="radio" id="payment-card" name='payment'>
 					<label for="payment-card">Оплата онлайн банковской картой.</label>
 				</div>
 			</div>
@@ -203,6 +192,11 @@
 		</div>
 	</div>	
 </section>
+{% else %}
+<div class='container products-in-cart empty'>
+	<h2>Ваша корзина пуста</h2>
+</div>
+{% endif %}
 {% endblock %}
 
 {% block scripts %}

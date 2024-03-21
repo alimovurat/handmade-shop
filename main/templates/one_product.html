@@ -8,14 +8,22 @@
 
 {% block content %}
 <section class="section-title">
-	<div class="container page-title">
-		<h1>Картины</h1>
+	<div class="container page-title {% if product.category.name == 'Мягкие игрушки' %}stuffed_toys-background{% endif %} {% if product.category.name == 'Броши' %}brooches-background{% endif %}">
+		<h1>{{ product.category }}</h1>
 	</div>
 </section>
 <section class="page-path container">
 	<ul>
 		<li class="home colored"><a href="{% url 'home' %}">Главная</a></li>
-		<li>{{ product.category }}</li>
+		{% if product.technique and product.category.name == 'Картины' %}
+			<li><a class="colored" href="{% url 'products_by_category' category_id=product.category.id %}">{{ product.category }}</a></li>
+		{% else %}
+			<li><a class='colored' href="{% url 'products_by_category' category_id=product.category.id %}">{{ product.category }}</a></li>
+		{% endif %}
+		{% if product.technique and product.category.name == 'Картины' %}
+			<li><a class='colored' href="{% url 'products_by_technique' technique=product.technique %}">{{ product.technique }}</a></li>
+		{% endif %}
+		<li>{{ product.title }}</li>
 	</ul>
 </section>
 <div class="container product-detail">
@@ -26,23 +34,27 @@
 		<div class="right-side">
 			<ul class="product-info">
 				<li class="product title">{{ product.title }}</li>
-				<li class="product price">{{ product.price }} ₽</li>
+				{% if product.price %}
+					<li class="product price">{{ product.price }} ₽</li>
+				{% endif %}
 				{% if product.category.name == 'Картины' %}
-				<li class="product genre"><b>Жанр:</b> {{ product.genre }}</li>
+					<li class="product genre"><b>Жанр:</b> {{ product.genre }}</li>
 				{% endif %}
 				{% if product.category.name == 'Картины' or product.category.name == 'Мягкие игрушки' %}
-				<li class="product technique"><b>Техника:</b> {{ product.technique }}</li>
+					<li class="product technique"><b>Техника:</b> {{ product.technique }}</li>
 				{% endif %}
 				<li class="product size"><b>Размер:</b> {{ product.size }}</li>
 				<li class="product material"><b>Материал:</b> {{ product.material }}</li>
 				{% if product.category.name == 'Картины' %}
-				<li class="product frame"><b>Наличие подрамника:</b> {{ product.display_frame }}</li>
-				<li class="product baguette"><b>Наличие багета:</b> {{ product.display_baguette }}</li>
-				<li class="product passe-partout"><b>Наличие паспарту:</b> {{ product.display_passe_partout }}</li>
-				<li class="product decor"><b>Оформление:</b> {{ product.decor }}</li>
+					<li class="product frame"><b>Наличие подрамника:</b> {{ product.display_frame }}</li>
+					<li class="product baguette"><b>Наличие багета:</b> {{ product.display_baguette }}</li>
+					<li class="product passe-partout"><b>Наличие паспарту:</b> {{ product.display_passe_partout }}</li>
+					<li class="product decor"><b>Оформление:</b> {{ product.decor }}</li>
 				{% endif %}
 				<li class="product creation-year"><b>Год создания:</b> {{ product.creation_year }}</li>
-				<button class="gradient-button add-to-cart-button" type='submit' name='add_to_cart'>КУПИТЬ</button>
+				<form action="{% url 'add_to_shopping_cart' product_id=product.id %}" class="add-to-shopping_cart-form">
+					<button class="gradient-button add-to-cart-button" type='submit' name='add_to_shopping_cart' {% if product.count < 1 %}disabled{% endif %}>В КОРЗИНУ</button>
+				</form>
 			</ul>
 		</div>
 	</section>
