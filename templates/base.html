@@ -21,40 +21,40 @@
 						<li class="top-bar-menu-item" id='shopping-cart-page'><a class="top-bar-links" href="{% url 'shopping_cart' %}">Корзина</a></li>
 						<li class="top-bar-menu-item" id='blog-page'><a class="top-bar-links"
 								href="https://themes.g5plus.net/handmade/home-01/" target="_blank">Блог</a></li>
-						<li class="top-bar-menu-item" id="openModalBtn"><span class='colored-login-button'>Войти</span></li>
-						<div id="registrationModal" class="modal">
-							<div class="container modal-content" id='loginForm'>
-								<span class="close">&times;</span>
-								<h2>ВХОД <span id='registerLink'>/ РЕГИСТРАЦИЯ</span></h2>
-								<form class="login-form" action="/submit_login" method="post">
-									<input class='registration-row' type="email" name="email" placeholder="Email или телефон" required autocomplete="email">
-									<input class='registration-row' type="password" name="password" placeholder="Пароль" required>
-									<button class='gradient-button reg-button' type="submit">Войти</button>
-								</form>
-							</div>
-							<div class="container modal-content" id='registerForm'>
-								<span class="close">&times;</span>
-								<h2><span id='loginLink'>ВХОД /</span> РЕГИСТРАЦИЯ</h2>
-								<form class="register-form" action="/submit_registration" method="post">
-									<input class='registration-row' type="text" id="name" name="name" placeholder="Имя" required autocomplete="name">
-									<input class='registration-row' type="email" id="email" name="email" placeholder="Email" required autocomplete="email">
-									<input class='registration-row' type="tel" id="phone" name="phone" placeholder="Телефон" required autocomplete="tel">
-									<input class='registration-row' type="password" id="password" name="password" placeholder="Пароль" required>
-									<div id="message">
-										<h4>Пароль должен содержать следующее:</h4>
-										<div class="password-strength-check">
-											<p id="letter" class="invalid">Маленькие буквы</p>
-											<p id="capital" class="invalid">Большие буквы</p>
-											<p id="number" class="invalid">Число</p>
-											<p id="length" class="invalid">Минимум 8 символов</p>
-										</div>
-									</div>
-									<input class='registration-row' type="password" id="confirmPassword" name="confirmPassword" placeholder="Подтвердите пароль" required>
-									<button class='gradient-button reg-button' type="submit">Зарегистрироваться</button>
-								</form>
+						<li class="top-bar-menu-item" id="openModalBtn2"><span class='colored-login-button'>Войти</span></li>
+					</ul>
+				</div>
+			</div>
+			<div id="registrationModal" class="modal">
+				<div class="container modal-content" id='loginForm'>
+					<span class="close">&times;</span>
+					<h2>ВХОД <span id='registerLink'>/ РЕГИСТРАЦИЯ</span></h2>
+					<form class="login-form" action="/submit_login" method="post">
+						<input class='registration-row' type="email" name="email" placeholder="Email или телефон" required autocomplete="email">
+						<input class='registration-row' type="password" name="password" placeholder="Пароль" required>
+						<button class='gradient-button reg-button' type="submit">Войти</button>
+					</form>
+				</div>
+				<div class="container modal-content" id='registerForm'>
+					<span class="close">&times;</span>
+					<h2><span id='loginLink'>ВХОД /</span> РЕГИСТРАЦИЯ</h2>
+					<form class="register-form" action="/submit_registration" method="post">
+						<input class='registration-row' type="text" id="name" name="name" placeholder="Имя" required autocomplete="name">
+						<input class='registration-row' type="email" id="email" name="email" placeholder="Email" required autocomplete="email">
+						<input class='registration-row' type="tel" id="phone" name="phone" placeholder="Телефон" required autocomplete="tel">
+						<input class='registration-row' type="password" id="password" name="password" placeholder="Пароль" required>
+						<div id="message">
+							<h4>Пароль должен содержать следующее:</h4>
+							<div class="password-strength-check">
+								<p id="letter" class="invalid">Маленькие буквы</p>
+								<p id="capital" class="invalid">Большие буквы</p>
+								<p id="number" class="invalid">Число</p>
+								<p id="length" class="invalid">Минимум 8 символов</p>
 							</div>
 						</div>
-					</ul>
+						<input class='registration-row' type="password" id="confirmPassword" name="confirmPassword" placeholder="Подтвердите пароль" required>
+						<button class='gradient-button reg-button' type="submit">Зарегистрироваться</button>
+					</form>
 				</div>
 			</div>
 			<div class="header-categories-search">
@@ -78,6 +78,7 @@
 						<div class="shopping-cart">
 							<div class="cart">
 								<a href="{% url 'shopping_cart' %}"><img src="{% static 'images/products-in-cart.png' %}" alt="cart" , width="25" , height="25"></a>
+								<p>{{ items|length }}</p>
 							</div>
 							<div class="total-price">
 								<p>{{ total_price }} ₽</p>
@@ -112,6 +113,37 @@
 						<li class="menu-item">Контакты</li>
 						<li class="menu-item">Новые посты</li>
 						</ul>
+						<div class='container menu-mobile'>
+							<a href='#modal-block' class="hr-menu">
+								<hr class="hr-line">
+								<hr class="hr-line">
+								<hr class="hr-line">
+							</a>
+							<div class="popup-menu-mobile" id="modal-block">
+								<a class="close-block" href="#close-block">&#10006;</a>
+								<ul class="popup-menu-list-mobile">
+									<li class="menu-item-mobile">Каталог:</li>
+									<li class="mobile-catalogue-item"><a class="top-bar-links" href="{% url 'products_by_category' category_id=2 %}">Картины</a></li>
+									<li class="mobile-catalogue-item"><a class="top-bar-links" href="{% url 'products_by_category' category_id=3 %}">Мягкие игрушки</a></li>
+									<li class="mobile-catalogue-item"><a class="top-bar-links" href="{% url 'products_by_category' category_id=4 %}">Броши</a></li>
+									<li class="menu-item-mobile">Обо мне</li>
+									<li class="menu-item-mobile">Портфолио</li>
+									<li class="menu-item-mobile"><a class="top-bar-links" href="{% url 'delivery' %}">Оплата и доставка</a></li>
+									<li class="menu-item-mobile">Контакты</li>
+									<li class="menu-item-mobile">Новые посты</li>
+								</ul>
+							</div>
+							<button class="search-button-mobile">
+								<img src="{% static 'images/search.png' %}" alt="search" , width="30" , height="30">
+							</button>
+							<div class="cart-mobile">
+								<a href="{% url 'shopping_cart' %}"><img src="{% static 'images/products-in-cart.png' %}" alt="cart" , width="25" , height="25"></a>
+								<p>{{ items|length }}</p>
+							</div>
+							<div class="login-mobile" id="openModalBtn">
+								<img src="{% static 'images/login.png' %}" alt="cart" , width="32" , height="32">
+							</div>
+						</div>
 				</menu>
 			</nav>	
 		</header>

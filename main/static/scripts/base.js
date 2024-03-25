@@ -1,10 +1,13 @@
 // открытие формы для регистрации
 
-document.getElementById('openModalBtn').addEventListener('click', function () {
+function openModalFunction() {
 	document.getElementById('registrationModal').style.display = 'block';
 	document.getElementById('registerForm').style.display = 'none';
 	document.getElementById('loginForm').style.display = 'block';
-});
+}
+
+document.getElementById('openModalBtn').addEventListener('click', openModalFunction);
+document.getElementById('openModalBtn2').addEventListener('click', openModalFunction);
 
 document.getElementsByClassName('close')[0].addEventListener('click', function () {
 	document.getElementById('registrationModal').style.display = 'none';
@@ -23,6 +26,7 @@ document.getElementById('loginLink').addEventListener('click', function () {
 	document.getElementById('registerForm').style.display = 'none';
 	document.getElementById('loginForm').style.display = 'block';
 });
+
 
 // Проверка пароля
 

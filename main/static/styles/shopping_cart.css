@@ -149,6 +149,7 @@
 .bottom {
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap;
 }
 
 .in-cart {
@@ -359,11 +360,153 @@
 
 /* Масштабирование страницы */
 
-@media screen and (max-width: 320px) {}
+@media screen and (max-width: 320px) {
 
-@media screen and (min-width: 321px) and (max-width: 360px) {}
+	.registration-form,
+	.delivery-form {
+		width: 100%;
+	}
 
-@media screen and (min-width: 361px) and (max-width: 768px) {}
+	.bottom {
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.in-cart {
+		margin: 0;
+		justify-content: center;
+		margin-left: auto;
+		margin-right: 5px;
+		width: auto;
+		flex-wrap: wrap;
+	}
+
+	.top h3 {
+		font-size: small;
+	}
+
+	.empty-cart-button,
+	.back-button,
+	.checkout-button {
+		width: 120px;
+		height: 30px;
+		font-size: x-small;
+	}
+
+	.page-title {
+		height: 180px;
+	}
+
+	.section-title {
+		height: 220px;
+	}
+
+	.page-title h1 {
+		font-size: 40px;
+	}
+
+	.product-title {
+		font-size: medium;
+	}
+
+	.product-info li {
+		font-size: small;
+	}
+
+	.price {
+		font-size: smaller;
+	}
+
+	.center {
+		flex-wrap: wrap;
+	}
+
+	.center-right {
+		width: 100%;
+		padding: 0;
+	}
+
+	.center-left {
+		width: 100%;
+	}
+
+	.top {
+		flex-wrap: wrap;
+	}
+
+	.form {
+		margin: 0;
+		margin-bottom: 10px;
+	}
+
+	.form-row {
+		display: block;
+		width: 100%;
+	}
+
+	.first-name,
+	.last-name {
+		width: 100%;
+	}
+
+	.create-account-form {
+		margin: 0 auto;
+	}
+}
+
+@media screen and (min-width: 321px) and (max-width: 768px) {
+
+	.registration-form,
+	.delivery-form {
+		width: 100%;
+	}
+
+	.bottom {
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.in-cart {
+		margin: 0;
+		justify-content: center;
+		margin-left: auto;
+		margin-right: 5px;
+		width: auto;
+	}
+
+	.back-button {
+		margin-right: 5px;
+	}
+
+	.top h3 {
+		font-size: small;
+	}
+
+	.empty-cart-button {
+		width: 150px;
+		font-size: small;
+	}
+
+	.product-title {
+		font-size: medium;
+	}
+
+	.product-info li {
+		font-size: small;
+	}
+
+	.price {
+		font-size: smaller;
+	}
+
+	.center-right {
+		width: 60%;
+	}
+
+	.center-left {
+		width: 40%;
+	}
+}
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 
@@ -371,8 +514,4 @@
 	.delivery-form {
 		width: 45%;
 	}
-
-	/* .container {
-		flex-wrap: nowrap;
-	} */
 }

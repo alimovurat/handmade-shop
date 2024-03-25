@@ -71,13 +71,26 @@
 	margin-top: 10px;
 }
 
-@media screen and (max-width: 320px) {}
+@media screen and (max-width: 320px) {
 
-@media screen and (min-width: 321px) and (max-width: 360px) {}
+	.page-title h1 {
+		font-size: 30px;
+	}
 
-@media screen and (min-width: 361px) and (max-width: 768px) {}
+	.section-title {
+		height: 200px;
+	}
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
+	.page-title {
+		height: 180px;
+	}
+}
+
+@media screen and (min-width: 321px) and (max-width: 360px) {
+
+	.page-title h1 {
+		font-size: 40px;
+	}
 
 	.section-title {
 		height: 250px;
@@ -86,11 +99,24 @@
 	.page-title {
 		height: 220px;
 	}
+}
+
+@media screen and (min-width: 361px) and (max-width: 768px) {
 
 	.page-title h1 {
-		font-size: 70px;
-		padding-top: 24px;
+		font-size: 50px;
 	}
+
+	.section-title {
+		height: 250px;
+	}
+
+	.page-title {
+		height: 220px;
+	}
+}
+
+@media screen and (max-width: 1024px) {
 
 	.pay-and-delivery p {
 		font-size: small;
@@ -105,4 +131,10 @@
 	}
 }
 
-@media screen and (min-width: 1025px) and (max-width: 1280px) {}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+	.page-title h1 {
+		font-size: 70px;
+		padding-top: 24px;
+	}
+}

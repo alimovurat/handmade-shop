@@ -9,7 +9,6 @@
 }
 
 body {
-	min-width: 320px;
 	font-family: "roboto", sans-serif;
 	margin: 0;
 }
@@ -294,8 +293,131 @@ a {
 }
 
 .cart {
-	margin-right: 15px;
+	margin-right: 25px;
 	cursor: pointer;
+	position: relative;
+}
+
+.total-price p {
+	font-size: 15px;
+}
+
+/* Меню для мобильных устройств */
+
+.menu-mobile {
+	display: none;
+	height: 52px;
+	color: violet;
+	position: relative;
+}
+
+.search-button-mobile {
+	background-color: transparent;
+	cursor: pointer;
+	border: none;
+}
+
+.cart-mobile {
+	margin: 0 20px;
+	position: relative;
+}
+
+.cart-mobile p,
+.cart p {
+	position: absolute;
+	top: -9px;
+	right: -14px;
+	width: 19px;
+	height: 19px;
+	line-height: 19px;
+	padding: 0;
+	background-color: #7a00ff;
+	text-align: center;
+	border: 1px solid white;
+	border-radius: 100%;
+	color: white;
+	margin: 0;
+	font-size: small;
+}
+
+.login-mobile {
+	margin-left: 6px;
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+#menu {
+	display: none;
+}
+
+#modal-block {
+	background-color: indigo;
+	color: #fff;
+	position: fixed;
+	top: 0;
+	left: -100vw;
+	width: 100vw;
+	height: 100vh;
+	transition: all .5s;
+	font-family: 'Raleway', sans-serif;
+	z-index: 9;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#modal-block ul {
+	list-style-type: none;
+}
+
+#modal-block li {
+	font-size: 20px;
+	line-height: 40px;
+	cursor: pointer;
+}
+
+#modal-block li:hover {
+	color: violet;
+}
+
+#modal-block:target {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	left: 0;
+}
+
+.catalogue-mobile {
+	display: flex;
+}
+
+.mobile-catalogue-item {
+	margin-left: 20px;
+	list-style: disc;
+}
+
+#modal-block h3 {
+	margin: 20px 0;
+	font-size: 1.7em;
+}
+
+.catalogue-mobile p {
+	margin: 0;
+	margin-right: 5px;
+	margin-left: auto;
+}
+
+.close-block {
+	display: flex;
+	position: absolute;
+	top: 30%;
+	right: 25%;
+	padding: 5px 20px;
+	font-size: 30px;
+}
+
+.close-block:hover {
+	color: violet;
 }
 
 /* Меню */
@@ -375,7 +497,6 @@ menu {
 }
 
 .navigation {
-	height: 82px;
 	padding: 0 10px;
 }
 
@@ -465,6 +586,7 @@ menu {
 	margin: 0;
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap;
 }
 
 .page-path li {
@@ -508,6 +630,7 @@ footer {
 	display: flex;
 	justify-content: center;
 	margin-top: 20px;
+	flex-wrap: wrap;
 }
 
 .social-icon img {
@@ -601,11 +724,177 @@ footer {
 
 /* Масштабирование страницы */
 
-@media screen and (max-width: 320px) {}
+@media screen and (max-width: 320px) {
 
-@media screen and (min-width: 321px) and (max-width: 360px) {}
+	.logo {
+		width: 25%;
+	}
 
-@media screen and (min-width: 361px) and (max-width: 768px) {}
+	.logo img {
+		width: 150px;
+		height: 85px;
+	}
+
+	.menu-mobile {
+		height: auto;
+		padding: 6px 0;
+	}
+
+	.page-title h1 {
+		font-size: 50px;
+	}
+
+	#modal-block ul {
+		padding: 5px;
+	}
+
+	#modal-block li {
+		font-size: medium;
+	}
+}
+
+@media screen and (max-width: 480px) {
+
+	.page-path li {
+		list-style-position: inside;
+		list-style-type: '>';
+		padding: 0;
+	}
+
+	.modal-content {
+		width: 200px;
+		padding: 30px;
+	}
+
+	.modal-content h2 {
+		font-size: medium;
+		margin-left: 10%;
+	}
+
+	.registration-row {
+		font-size: small;
+		padding: 10px 10px;
+	}
+
+	.password-strength-check {
+		width: 120px;
+		font-size: small;
+	}
+
+	#message h4 {
+		font-size: x-small;
+		margin: 0;
+		line-height: 15px;
+	}
+
+	.reg-button {
+		width: 150px;
+		font-size: small;
+	}
+
+	.password-strength-check p {
+		font-size: x-small;
+	}
+}
+
+@media screen and (min-width: 321px) and (max-width: 768px) {
+
+	.menu-mobile {
+		height: 52px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+
+	.top-bar,
+	.search,
+	.main-menu {
+		display: none;
+	}
+
+	.header-categories-search {
+		height: 140px;
+		border: none;
+	}
+
+	.logo {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.menu-mobile {
+		display: flex;
+		border: 2px solid;
+		border-image: linear-gradient(to right, violet, indigo) 1;
+		flex-wrap: wrap;
+	}
+
+	.hr-menu {
+		width: 25px;
+		height: 25px;
+		background-color: white;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-right: auto;
+		margin-left: 20px;
+	}
+
+	.hr-line {
+		width: 100%;
+		margin: 3px 0;
+		border: 1px solid indigo;
+	}
+
+	.links img {
+		width: 30px;
+		height: 30px;
+	}
+
+	.contacts h2 {
+		font-size: 1.25em;
+	}
+
+	.contacts p {
+		font-size: 0.75em;
+	}
+
+	.page-title {
+		height: 220px;
+	}
+}
+
+@media screen and (min-width: 481px) and (max-width: 1024px) {
+
+	.modal-content {
+		width: 400px;
+		padding: 30px;
+	}
+
+	.modal-content h2 {
+		font-size: medium;
+		margin-left: 20%;
+	}
+
+	.registration-row {
+		font-size: medium;
+		padding: 10px 10px;
+	}
+
+	.password-strength-check {
+		font-size: small;
+	}
+
+	#message h4 {
+		font-size: small;
+	}
+
+	.reg-button {
+		width: 180px;
+		font-size: medium;
+	}
+}
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 
@@ -620,7 +909,6 @@ footer {
 	.logo img {
 		width: 186px;
 		height: 100px;
-		cursor: pointer;
 	}
 
 	.search {
@@ -677,34 +965,6 @@ footer {
 
 	.links {
 		margin-top: 10px;
-	}
-
-	.modal-content {
-		width: 400px;
-		padding: 30px;
-	}
-
-	.modal-content h2 {
-		font-size: medium;
-		margin-left: 20%;
-	}
-
-	.registration-row {
-		font-size: medium;
-		padding: 10px 10px;
-	}
-
-	.password-strength-check {
-		font-size: small;
-	}
-
-	#message h4 {
-		font-size: small;
-	}
-
-	.reg-button {
-		width: 180px;
-		font-size: medium;
 	}
 
 	.section-title {

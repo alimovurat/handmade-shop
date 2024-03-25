@@ -31,14 +31,11 @@
 .products-list {
 	display: flex;
 	flex-wrap: wrap;
-	padding: 0 15px;
-}
-
-.card-size {
-	width: 33%;
+	padding-left: 30px;
 }
 
 .product-card {
+	width: 27.5%;
 	height: 320px;
 	margin: 20px;
 	text-align: center;
@@ -92,6 +89,7 @@
 }
 
 .product-top {
+	width: 100%;
 	height: 65%;
 	display: flex;
 	align-items: center;
@@ -100,9 +98,17 @@
 	border-top-right-radius: 10px;
 }
 
+.product-top a {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .product-top img {
-	max-width: 90%;
+	max-width: 85%;
 	max-height: 90%;
+	object-fit: contain;
 }
 
 
@@ -163,11 +169,96 @@
 
 /* Масштабирование страницы */
 
-@media screen and (max-width: 320px) {}
+@media screen and (max-width: 320px) {
 
-@media screen and (min-width: 321px) and (max-width: 360px) {}
+	.pagination {
+		display: block;
+	}
 
-@media screen and (min-width: 361px) and (max-width: 768px) {}
+	.page-title h1 {
+		font-size: 40px;
+	}
+}
+
+
+@media screen and (max-width: 480px) {
+
+	.product-card {
+		width: 90%;
+		height: 360px;
+	}
+
+	.product-top {
+		height: 70%;
+	}
+
+	.products-list {
+		padding: 0;
+	}
+
+	.product-price {
+		padding-bottom: 10px;
+	}
+
+	.page-numbers {
+		padding: 5px 1px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+
+	.main-left {
+		display: none;
+	}
+
+	.product-card {
+		box-shadow: none;
+		border-radius: 0;
+		border: 1px solid #e0e0e0;
+		transition: transform none;
+	}
+
+	.product-size {
+		display: none;
+	}
+
+	.product-top,
+	.product-bottom {
+		border-radius: 0;
+	}
+
+	.title-size {
+		min-height: 50px;
+	}
+}
+
+@media screen and (min-width: 321px) and (max-width: 480px) {
+
+	.page-title h1 {
+		font-size: 50px;
+	}
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+
+	.main-right {
+		flex-basis: 100%;
+		max-width: 717px;
+	}
+
+	.product-card {
+		width: 39%;
+		height: 280px;
+	}
+
+	.product-title {
+		font-size: medium;
+	}
+
+	.page-title h1 {
+		font-size: 50px;
+	}
+}
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 
@@ -181,15 +272,17 @@
 	}
 
 	.product-card {
+		width: 25%;
 		height: 220px;
 	}
 
 	.product-bottom {
 		padding-top: 10px;
+		height: 40%;
 	}
 
 	.product-top {
-		height: 60%;
+		height: 55%;
 	}
 
 	.title-size {
@@ -201,15 +294,10 @@
 		padding: 0;
 	}
 
-	.product-size {
-		display: none;
-	}
-
 	.product-price {
 		font-size: smaller;
 		font-weight: bold;
-		margin: 0;
-		margin-bottom: 10px;
+		margin: 10px 0;
 	}
 
 	.search-input {
@@ -220,5 +308,9 @@
 		width: 20px;
 		height: 20px;
 		padding: 5px;
+	}
+
+	.product-size {
+		display: none;
 	}
 }
