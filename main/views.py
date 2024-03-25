@@ -9,6 +9,7 @@ def home(request: HttpRequest):
     paginator = Paginator(products, 9)
     page = request.GET.get('page')
     total_price = calculate_total_price(request)
+    items = request.session.get('shopping_cart', [])
 
     try:
         products = paginator.page(page)
@@ -19,14 +20,16 @@ def home(request: HttpRequest):
 
     return HttpResponse(render(request, 'home.html', {
         'products': products,
-        'total_price': total_price
+        'total_price': total_price,
+        'items': items
     }))
 
 
 def products_by_category(request: HttpRequest, category_id: int):
     category = Category.objects.get(id=category_id)
-    products = Product.objects.filter(category=category)
+    products = Product.objects.filter(category=category, is_active=True)
     total_price = calculate_total_price(request)
+    items = request.session.get('shopping_cart', [])
     paginator = Paginator(products, 9)
     page = request.GET.get('page')
     techniques = set()
@@ -47,14 +50,16 @@ def products_by_category(request: HttpRequest, category_id: int):
         'category': category,
         'products': products,
         'techniques': techniques,
-        'total_price': total_price
+        'total_price': total_price,
+        'items': items
     }))
 
 
 def products_by_technique(request: HttpRequest, technique: str):
-    products = Product.objects.filter(technique=technique)
+    products = Product.objects.filter(technique=technique, is_active=True)
     category = products.first().category
     total_price = calculate_total_price(request)
+    items = request.session.get('shopping_cart', [])
     paginator = Paginator(products, 9)
     page = request.GET.get('page')
 
@@ -70,7 +75,8 @@ def products_by_technique(request: HttpRequest, technique: str):
         'products': products,
         'technique': technique,
         'category': category,
-        'total_price': total_price
+        'total_price': total_price,
+        'items': items
     }))
 
 
@@ -88,9 +94,11 @@ def get_product_for_view(product_id: int):
 
 def one_product(request: HttpRequest, product_id: int):
     total_price = calculate_total_price(request)
+    items = request.session.get('shopping_cart', [])
     return HttpResponse(render(request, 'one_product.html', {
         'product': get_product_for_view(product_id=product_id),
-        'total_price': total_price
+        'total_price': total_price,
+        'items': items
     }))
 
 
@@ -170,6 +178,10 @@ def clear_shopping_cart(request: HttpRequest):
 
 def delivery(request: HttpRequest):
     deliveries = Delivery.objects.all()
+    total_price = calculate_total_price(request)
+    items = request.session.get('shopping_cart', [])
     return HttpResponse(render(request, 'delivery.html', {
         'deliveries': deliveries,
+        'items': items,
+        'total_price': total_price
     }))

@@ -92,11 +92,63 @@ main {
 
 /* Масштабирование страницы */
 
-@media screen and (max-width: 320px) {}
+@media screen and (max-width: 768px) {
 
-@media screen and (min-width: 321px) and (max-width: 360px) {}
+	main {
+		padding-bottom: 0;
+	}
 
-@media screen and (min-width: 361px) and (max-width: 768px) {}
+	.product-card-detail {
+		margin: 20px 0;
+		height: auto;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid #e0e0e0;
+	}
+
+	.right-side {
+		height: 350px;
+	}
+
+	.product {
+		font-size: medium;
+	}
+
+	.title {
+		font-size: 25px;
+	}
+
+	.price {
+		font-size: 20px;
+		padding: 10px 0;
+	}
+
+	.add-to-cart-button {
+		margin-top: 10px;
+		width: 150px;
+		height: 40px;
+		font-size: medium;
+	}
+
+	.section-title {
+		height: 250px;
+	}
+
+	.left-side {
+		width: 100%;
+	}
+
+	.right-side {
+		width: 100%;
+		margin-left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0 10px;
+		height: auto;
+	}
+}
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 

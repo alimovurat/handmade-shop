@@ -32,9 +32,9 @@
 	<div class="main-right">
 		<section class="products-list">
 			{% for product in products %}
-				<a class='card-size' href="{% url 'one_product' product_id=product.id %}"><div class="product-card {% if product.count < 1 %}product-card_disabled{% endif %}">
+				<div class="product-card {% if product.count < 1 %}product-card_disabled{% endif %}">
 					<div class="product-top {% if product.category.name == 'Картины' %} paintings {% endif %}">
-						<img src="{{ product.image.url }}" alt="product">
+						<a href="{% url 'one_product' product_id=product.id %}"><img src="{{ product.image.url }}" alt="product"></a>
 					</div>
 					<div class="product-bottom">
 						<div class='title-size'>
@@ -47,7 +47,7 @@
 							{% endif %}
 						</div>
 					</div>
-				</div></a>
+				</div>
 			{% endfor %}
 		</section>
 		<section class="products-page">
