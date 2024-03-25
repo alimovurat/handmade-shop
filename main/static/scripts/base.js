@@ -83,7 +83,7 @@ myInput.onkeyup = function () {
 
 // Изменение цвета указателя текущей страницы
 
-if (window.location.href.includes("home")) {
+if (window.location.pathname === "/") {
 	document.getElementById("home-page").style.color = "violet";
 } else if (window.location.href.includes("shopping_cart")) {
 	document.getElementById("shopping-cart-page").style.color = "violet";

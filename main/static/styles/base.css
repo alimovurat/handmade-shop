@@ -56,16 +56,18 @@ a {
 }
 
 .top-bar-menu-item {
-	list-style-type: "|";
+	list-style-type: none;
 	margin: 0 10px 0 10px;
 	cursor: pointer;
 	padding-left: 15px;
 	font-weight: 200;
 	color: rgb(102, 102, 102);
+	border-left: 1px solid #c4c4c4;
 }
 
 #home-page {
 	list-style-type: none;
+	border: none;
 }
 
 .top-bar-links:hover {

@@ -185,3 +185,12 @@ def delivery(request: HttpRequest):
         'items': items,
         'total_price': total_price
     }))
+
+
+def my_account(request: HttpRequest):
+    total_price = calculate_total_price(request)
+    items = request.session.get('shopping_cart', [])
+    return HttpResponse(render(request, 'my_account.html', {
+        'items': items,
+        'total_price': total_price
+    }))
