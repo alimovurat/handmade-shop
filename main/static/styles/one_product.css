@@ -78,8 +78,6 @@ main {
 
 .add-to-cart-button {
 	margin-top: 20px;
-	width: 180px;
-	height: 50px;
 	font-size: large;
 	color: red;
 	border: none;
@@ -91,6 +89,13 @@ main {
 }
 
 /* Масштабирование страницы */
+
+@media screen and (max-width: 283px) {
+
+	.page-title h1 {
+		font-size: 35px;
+	}
+}
 
 @media screen and (max-width: 768px) {
 
@@ -147,6 +152,15 @@ main {
 		align-items: center;
 		padding: 0 10px;
 		height: auto;
+	}
+
+
+}
+
+@media screen and (min-width: 284px) and (max-width: 395px) {
+
+	.page-title h1 {
+		font-size: 55px;
 	}
 }
 

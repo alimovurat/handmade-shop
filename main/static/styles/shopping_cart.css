@@ -192,26 +192,7 @@
 	margin-bottom: 20px;
 }
 
-/* empty-cart-button */
-
-.empty-cart-button {
-	width: 180px;
-	height: 50px;
-}
-
-/* back-button */
-
-.back-button {
-	width: 180px;
-	height: 50px;
-}
-
-/* checkout-button */
-
 .checkout-button {
-	width: 180px;
-	height: 50px;
-	margin-top: 20px 10px auto 0;
 	margin-right: 15px;
 	margin-left: auto;
 	font-size: medium;
