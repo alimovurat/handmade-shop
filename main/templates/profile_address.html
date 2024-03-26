@@ -1,0 +1,32 @@
+{% extends 'profile.html' %}
+{% load static %}
+
+{% block profile-content %}
+    <form class='form-container' action="{% url 'profile' %}" method="post">
+        <div class='form-row'>
+            <div class='city form'>
+                <label for="city">ГОРОД / НАСЕЛЁННЫЙ ПУНКТ <span class="required">*</span></label>
+                <input class='registration-input' type="text" name="city" id="city" required>
+            </div>
+        </div>
+        <div class='form-row'>
+            <div class='street form'>
+                <label for="street">УЛИЦА / ДОМ / КОРПУС <span class="required">*</span></label>
+                <input class='registration-input' type="text" name="street" id="street" required>
+            </div>
+        </div>
+        <div class='form-row'>
+            <div class='apartment form'>
+                <label for="apartment">КВАРТИРА / ДОМ <span class="required">*</span></label>
+                <input class='registration-input' type="text" name="apartment" id="apartment" required>
+            </div>
+        </div>
+        <div class='form-row'>
+            <div class='phone form'>
+                <label for="reg-phone">ТЕЛЕФОН <span class="required">*</span></label>
+                <input class='registration-input' type="tel" name="phone" id="reg-phone" required autocomplete="tel">
+            </div>
+        </div>
+        <button class='gradient-button save-changes-button' type='submit'>СОХРАНИТЬ ИЗМЕНЕНИЯ</button>
+    </form>
+{% endblock %}

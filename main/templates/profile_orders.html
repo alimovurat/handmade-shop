@@ -1,0 +1,9 @@
+{% extends 'profile.html' %}
+{% load static %}
+
+{% block profile-content %}
+	<div class='form-container account-orders'>
+		<p>У вас пока нет заказов</p>
+		<a class='browse-products-link'href="{% url 'home' %}"><button class='gradient-button browse-products-button' type='submit'>ПОСМОТРЕТЬ ТОВАРЫ</button></a>
+	</div>
+{% endblock %}

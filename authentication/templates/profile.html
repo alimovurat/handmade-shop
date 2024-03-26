@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<title>Profile</title>
+<link rel="stylesheet" href="{% static 'styles/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="section-title">
+	<div class="container page-title">
+		<h1>Личный кабинет</h1>
+	</div>
+</section>
+<section class="page-path container">
+	<ul>
+		<li class="home colored"><a href="{% url 'home' %}">Главная</a></li>
+        <li>Личный кабинет</li>
+	</ul>
+</section>
+<div class="container my-account">
+    <div class='account-menu'>
+        <ul>
+            <a href="{% url 'profile_info' %}"><li class='bordered'>Данные аккаунта</li></a>
+            <a href="{% url 'profile_address' %}"><li class='bordered'>Мой адрес</li></a>
+            <a href="{% url 'profile_orders' %}"><li class='bordered'>Мои заказы</li></a>
+            <a href="{% url 'logout' %}"><li>Выйти</li></a>
+        </ul>
+    </div>
+    {% block profile-content %}
+    {% endblock %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'scripts/my_account.js' %}"></script>
+{% endblock %}

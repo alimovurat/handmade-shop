@@ -163,14 +163,6 @@
 					<input type="radio" id="delivery-choice-{{ delivery.id }}" name='delivery-choice' {% if forloop.first %} checked {% endif %}>
 					<label for="delivery-choice-{{ delivery.id }}">{{ delivery.name }} - {{ delivery.price }} руб.</label>
 				</div>
-				{% comment %} <div class='express-delivery checkbox-row'>
-					<input type="radio" id="delivery-choice-NabChelny" name='delivery-choice'>
-					<label for="delivery-choice-NabChelny">Курьером до двери по г. Набережные Челны - 300 руб.</label>
-				</div>
-				<div class='pickup checkbox-row'>
-					<input type="radio" id="delivery-choice-pickup" name='delivery-choice'>
-					<label for="delivery-choice-pickup">Самовывоз: г. Набережные Челны - бесплатно.</label>
-				</div> {% endcomment %}
 				{% endfor %}
 			</div>
 			<div class='payment-method'>

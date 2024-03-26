@@ -1,34 +1,9 @@
-{% extends 'base.html' %}
+{% extends 'profile.html' %}
 {% load static %}
 
-{% block head %}
-<title>My_account</title>
-<link rel="stylesheet" href="{% static 'styles/my_account.css' %}">
-{% endblock %}
-
-{% block content %}
-<section class="section-title">
-	<div class="container page-title">
-		<h1>Личный кабинет</h1>
-	</div>
-</section>
-<section class="page-path container">
-	<ul>
-		<li class="home">Главная</li>
-        <li>Личный кабинет</li>
-	</ul>
-</section>
-<div class="container my-account">
-    <div class='account-menu'>
-        <ul>
-            <a href="#"><li>Данные аккаунта</li></a>
-            <a href="#"><li>Мой адрес</li></a>
-            <a href="#"><li>Мои заказы</li></a>
-            <a href="#"><li>Выйти</li></a>
-        </ul>
-    </div>
-    <div class='account-info'>
-        <div class='form-row'>
+{% block profile-content %}
+	<form class='form-container' action="{% url 'profile' %}" method="post">
+        <div class='form-row account-first-last-name'>
             <div class='first-name form'>
                 <label for="account-first-name">ИМЯ <span class="required">*</span></label>
                 <input class='registration-input' type="text" name="first-name" id="account-first-name" required autocomplete='first-name'>
@@ -44,7 +19,7 @@
                 <input class='registration-input' type="email" name="email" id="account-email" required autocomplete="email">
             </div>
         </div>
-        <p>Изменить пароль</p>
+        <h3>Изменить пароль</h3>
         <div class='form-row' id='account-old-password-form'>
             <div class='old-password form'>
                 <label for="account-old-password">СТАРЫЙ ПАРОЛЬ <span class="required">*</span></label>
@@ -72,11 +47,6 @@
                 <input class='registration-input' type="password" name="password-confirm" id="account-password-confirm" required>
             </div>
         </div>
-        <button class='gradient-button save-changes-button' type='submit' name='checkout'>СОХРАНИТЬ ИЗМЕНЕНИЯ</button>
-    </div>
-</div>
-{% endblock %}
-
-{% block scripts %}
-<script src="{% static 'scripts/my_account.js' %}"></script>
+        <button class='gradient-button save-changes-button' type='submit'>СОХРАНИТЬ ИЗМЕНЕНИЯ</button>
+    </form>
 {% endblock %}
